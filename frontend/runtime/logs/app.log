@@ -1,0 +1,374 @@
+2017-01-17 04:26:10 [::1][-][hehu64m109c84fkb3ofh3dhpp6][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'Unknown component ID: mongodb' in D:\project\project-management\vendor\yiisoft\yii2\di\ServiceLocator.php:136
+Stack trace:
+#0 D:\project\project-management\vendor\yiisoft\yii2-mongodb\ActiveRecord.php(36): yii\di\ServiceLocator->get('mongodb')
+#1 D:\project\project-management\vendor\yiisoft\yii2-mongodb\ActiveQuery.php(198): yii\mongodb\ActiveRecord::getDb()
+#2 D:\project\project-management\vendor\yiisoft\yii2-mongodb\Query.php(184): yii\mongodb\ActiveQuery->getCollection(NULL)
+#3 D:\project\project-management\vendor\yiisoft\yii2-mongodb\ActiveQuery.php(125): yii\mongodb\Query->buildCursor(NULL)
+#4 D:\project\project-management\vendor\yiisoft\yii2-mongodb\Query.php(345): yii\mongodb\ActiveQuery->buildCursor(NULL)
+#5 D:\project\project-management\vendor\yiisoft\yii2-mongodb\ActiveQuery.php(149): yii\mongodb\Query->one(NULL)
+#6 D:\project\project-management\vendor\yiisoft\yii2\db\BaseActiveRecord.php(107): yii\mongodb\ActiveQuery->one()
+#7 D:\project\project-management\common\models\User.php(111): yii\db\BaseActiveRecord::findOne(Array)
+#8 D:\project\project-management\common\models\LoginForm.php(73): common\models\User::findByUsername('admin')
+#9 D:\project\project-management\common\models\LoginForm.php(44): common\models\LoginForm->getUser()
+#10 [internal function]: common\models\LoginForm->validatePassword('password', NULL)
+#11 D:\project\project-management\vendor\yiisoft\yii2\validators\InlineValidator.php(69): call_user_func(Array, 'password', NULL)
+#12 D:\project\project-management\vendor\yiisoft\yii2\validators\Validator.php(265): yii\validators\InlineValidator->validateAttribute(Object(common\models\LoginForm), 'password')
+#13 D:\project\project-management\vendor\yiisoft\yii2\base\Model.php(356): yii\validators\Validator->validateAttributes(Object(common\models\LoginForm), Array)
+#14 D:\project\project-management\common\models\LoginForm.php(58): yii\base\Model->validate()
+#15 D:\project\project-management\frontend\controllers\SiteController.php(90): common\models\LoginForm->login()
+#16 [internal function]: frontend\controllers\SiteController->actionLogin()
+#17 D:\project\project-management\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#18 D:\project\project-management\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#19 D:\project\project-management\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('login', Array)
+#20 D:\project\project-management\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('site/login', Array)
+#21 D:\project\project-management\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#22 D:\project\project-management\frontend\web\index.php(17): yii\base\Application->run()
+#23 {main}
+2017-01-17 04:26:10 [::1][-][hehu64m109c84fkb3ofh3dhpp6][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf-frontend' => 'MWhRRGpxZnUFLANwCCgzBwMAODwcQxMqZic2dj5cPjFcHRwSODQzRg=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => '11111111'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_COOKIE = [
+    '_identity-frontend' => '780cfa4f1dfe7030a65d71cbd0bd6af1a550397c94c0c02cb84c53e8811a9b47a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:80:\"[{\"$oid\":\"58787f3b37d61b271c005b46\"},\"xLcSxTnAsel2M_JJVNELJpfhzFHglj0d\",2592000]\";}'
+    '_identity-backend' => 'bc9a7b133faa2b79a72cd46f07e71d6156d485dbc000108add00bfda42534a78a:2:{i:0;s:17:\"_identity-backend\";i:1;s:80:\"[{\"$oid\":\"58787f3b37d61b271c005b46\"},\"xLcSxTnAsel2M_JJVNELJpfhzFHglj0d\",2592000]\";}'
+    'advanced-frontend' => 'hehu64m109c84fkb3ofh3dhpp6'
+    '_csrf-frontend' => 'd4f1103b64b4af958e5bc4fd2f9455cc60e7f5020a062d0b14cbc27be25d440ba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"4DR4bYUr2hixv2u_WOg2T-XDmuMVREU3\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '222'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/project-management/frontend/web/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th,en-US;q=0.8,en;q=0.6'
+    'HTTP_COOKIE' => '_identity-frontend=780cfa4f1dfe7030a65d71cbd0bd6af1a550397c94c0c02cb84c53e8811a9b47a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%2258787f3b37d61b271c005b46%22%7D%2C%22xLcSxTnAsel2M_JJVNELJpfhzFHglj0d%22%2C2592000%5D%22%3B%7D; _identity-backend=bc9a7b133faa2b79a72cd46f07e71d6156d485dbc000108add00bfda42534a78a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%2258787f3b37d61b271c005b46%22%7D%2C%22xLcSxTnAsel2M_JJVNELJpfhzFHglj0d%22%2C2592000%5D%22%3B%7D; advanced-frontend=hehu64m109c84fkb3ofh3dhpp6; _csrf-frontend=d4f1103b64b4af958e5bc4fd2f9455cc60e7f5020a062d0b14cbc27be25d440ba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%224DR4bYUr2hixv2u_WOg2T-XDmuMVREU3%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x64;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\MySQL\\MySQL Fabric 1.5 & MySQL Utilities 1.5\\;C:\\Program Files (x86)\\MySQL\\MySQL Fabric 1.5 & MySQL Utilities 1.5\\Doctrine extensions for PHP\\;D:\\apache-maven-3.3.3\\bin;C:\\Python27;C:\\Python27\\Scripts;C:\\Program Files\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\php;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\mongodb\\bin\\;C:\\Program Files\\Java\\jdk1.7.0_79\\bin;C:\\Users\\TUM-PC\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TUM-PC\\AppData\\Roaming\\npm;C:\\Users\\TUM-PC\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/project'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/project'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/project/project-management/frontend/web/index.php'
+    'REMOTE_PORT' => '64244'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/project-management/frontend/web/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/project-management/frontend/web/index.php'
+    'PHP_SELF' => '/project-management/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1484623570.74
+    'REQUEST_TIME' => 1484623570
+]
+2017-01-17 04:29:16 [::1][-][hehu64m109c84fkb3ofh3dhpp6][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'Unknown component ID: mongodb' in D:\project\project-management\vendor\yiisoft\yii2\di\ServiceLocator.php:136
+Stack trace:
+#0 D:\project\project-management\vendor\yiisoft\yii2-mongodb\ActiveRecord.php(36): yii\di\ServiceLocator->get('mongodb')
+#1 D:\project\project-management\vendor\yiisoft\yii2-mongodb\ActiveQuery.php(198): yii\mongodb\ActiveRecord::getDb()
+#2 D:\project\project-management\vendor\yiisoft\yii2-mongodb\Query.php(184): yii\mongodb\ActiveQuery->getCollection(NULL)
+#3 D:\project\project-management\vendor\yiisoft\yii2-mongodb\ActiveQuery.php(125): yii\mongodb\Query->buildCursor(NULL)
+#4 D:\project\project-management\vendor\yiisoft\yii2-mongodb\Query.php(345): yii\mongodb\ActiveQuery->buildCursor(NULL)
+#5 D:\project\project-management\vendor\yiisoft\yii2-mongodb\ActiveQuery.php(149): yii\mongodb\Query->one(NULL)
+#6 D:\project\project-management\vendor\yiisoft\yii2\db\BaseActiveRecord.php(107): yii\mongodb\ActiveQuery->one()
+#7 D:\project\project-management\common\models\User.php(111): yii\db\BaseActiveRecord::findOne(Array)
+#8 D:\project\project-management\common\models\LoginForm.php(73): common\models\User::findByUsername('admin')
+#9 D:\project\project-management\common\models\LoginForm.php(44): common\models\LoginForm->getUser()
+#10 [internal function]: common\models\LoginForm->validatePassword('password', NULL)
+#11 D:\project\project-management\vendor\yiisoft\yii2\validators\InlineValidator.php(69): call_user_func(Array, 'password', NULL)
+#12 D:\project\project-management\vendor\yiisoft\yii2\validators\Validator.php(265): yii\validators\InlineValidator->validateAttribute(Object(common\models\LoginForm), 'password')
+#13 D:\project\project-management\vendor\yiisoft\yii2\base\Model.php(356): yii\validators\Validator->validateAttributes(Object(common\models\LoginForm), Array)
+#14 D:\project\project-management\common\models\LoginForm.php(58): yii\base\Model->validate()
+#15 D:\project\project-management\frontend\controllers\SiteController.php(90): common\models\LoginForm->login()
+#16 [internal function]: frontend\controllers\SiteController->actionLogin()
+#17 D:\project\project-management\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#18 D:\project\project-management\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#19 D:\project\project-management\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('login', Array)
+#20 D:\project\project-management\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('site/login', Array)
+#21 D:\project\project-management\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#22 D:\project\project-management\frontend\web\index.php(17): yii\base\Application->run()
+#23 {main}
+2017-01-17 04:29:16 [::1][-][hehu64m109c84fkb3ofh3dhpp6][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf-frontend' => 'MWhRRGpxZnUFLANwCCgzBwMAODwcQxMqZic2dj5cPjFcHRwSODQzRg=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => '11111111'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_COOKIE = [
+    '_identity-frontend' => '780cfa4f1dfe7030a65d71cbd0bd6af1a550397c94c0c02cb84c53e8811a9b47a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:80:\"[{\"$oid\":\"58787f3b37d61b271c005b46\"},\"xLcSxTnAsel2M_JJVNELJpfhzFHglj0d\",2592000]\";}'
+    '_identity-backend' => 'bc9a7b133faa2b79a72cd46f07e71d6156d485dbc000108add00bfda42534a78a:2:{i:0;s:17:\"_identity-backend\";i:1;s:80:\"[{\"$oid\":\"58787f3b37d61b271c005b46\"},\"xLcSxTnAsel2M_JJVNELJpfhzFHglj0d\",2592000]\";}'
+    'advanced-frontend' => 'hehu64m109c84fkb3ofh3dhpp6'
+    '_csrf-frontend' => 'd4f1103b64b4af958e5bc4fd2f9455cc60e7f5020a062d0b14cbc27be25d440ba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"4DR4bYUr2hixv2u_WOg2T-XDmuMVREU3\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '222'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/project-management/frontend/web/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th,en-US;q=0.8,en;q=0.6'
+    'HTTP_COOKIE' => '_identity-frontend=780cfa4f1dfe7030a65d71cbd0bd6af1a550397c94c0c02cb84c53e8811a9b47a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%2258787f3b37d61b271c005b46%22%7D%2C%22xLcSxTnAsel2M_JJVNELJpfhzFHglj0d%22%2C2592000%5D%22%3B%7D; _identity-backend=bc9a7b133faa2b79a72cd46f07e71d6156d485dbc000108add00bfda42534a78a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%2258787f3b37d61b271c005b46%22%7D%2C%22xLcSxTnAsel2M_JJVNELJpfhzFHglj0d%22%2C2592000%5D%22%3B%7D; advanced-frontend=hehu64m109c84fkb3ofh3dhpp6; _csrf-frontend=d4f1103b64b4af958e5bc4fd2f9455cc60e7f5020a062d0b14cbc27be25d440ba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%224DR4bYUr2hixv2u_WOg2T-XDmuMVREU3%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x64;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\MySQL\\MySQL Fabric 1.5 & MySQL Utilities 1.5\\;C:\\Program Files (x86)\\MySQL\\MySQL Fabric 1.5 & MySQL Utilities 1.5\\Doctrine extensions for PHP\\;D:\\apache-maven-3.3.3\\bin;C:\\Python27;C:\\Python27\\Scripts;C:\\Program Files\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\xampp\\php;C:\\Program Files (x86)\\Skype\\Phone\\;C:\\mongodb\\bin\\;C:\\Program Files\\Java\\jdk1.7.0_79\\bin;C:\\Users\\TUM-PC\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TUM-PC\\AppData\\Roaming\\npm;C:\\Users\\TUM-PC\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/project'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/project'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/project/project-management/frontend/web/index.php'
+    'REMOTE_PORT' => '64314'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/project-management/frontend/web/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/project-management/frontend/web/index.php'
+    'PHP_SELF' => '/project-management/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1484623756.572
+    'REQUEST_TIME' => 1484623756
+]
+2017-01-18 08:22:43 [::1][-][binrdt7of0td0068m598kff9q2][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'Unknown component ID: mongodb' in E:\project-management\vendor\yiisoft\yii2\di\ServiceLocator.php:136
+Stack trace:
+#0 E:\project-management\vendor\yiisoft\yii2-mongodb\ActiveRecord.php(36): yii\di\ServiceLocator->get('mongodb')
+#1 E:\project-management\vendor\yiisoft\yii2-mongodb\ActiveQuery.php(198): yii\mongodb\ActiveRecord::getDb()
+#2 E:\project-management\vendor\yiisoft\yii2-mongodb\Query.php(184): yii\mongodb\ActiveQuery->getCollection(NULL)
+#3 E:\project-management\vendor\yiisoft\yii2-mongodb\ActiveQuery.php(125): yii\mongodb\Query->buildCursor(NULL)
+#4 E:\project-management\vendor\yiisoft\yii2-mongodb\Query.php(345): yii\mongodb\ActiveQuery->buildCursor(NULL)
+#5 E:\project-management\vendor\yiisoft\yii2-mongodb\ActiveQuery.php(149): yii\mongodb\Query->one(NULL)
+#6 E:\project-management\vendor\yiisoft\yii2-mongodb\ActiveQuery.php(163): yii\mongodb\ActiveQuery->one(NULL)
+#7 E:\project-management\vendor\yiisoft\yii2\validators\UniqueValidator.php(144): yii\mongodb\ActiveQuery->exists()
+#8 E:\project-management\vendor\yiisoft\yii2\validators\Validator.php(265): yii\validators\UniqueValidator->validateAttribute(Object(frontend\models\SignupForm), 'username')
+#9 E:\project-management\vendor\yiisoft\yii2\base\Model.php(356): yii\validators\Validator->validateAttributes(Object(frontend\models\SignupForm), Array)
+#10 E:\project-management\frontend\models\SignupForm.php(46): yii\base\Model->validate()
+#11 E:\project-management\frontend\controllers\SiteController.php(153): frontend\models\SignupForm->signup()
+#12 [internal function]: frontend\controllers\SiteController->actionSignup()
+#13 E:\project-management\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#14 E:\project-management\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#15 E:\project-management\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('signup', Array)
+#16 E:\project-management\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('site/signup', Array)
+#17 E:\project-management\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 E:\project-management\frontend\web\index.php(17): yii\base\Application->run()
+#19 {main}
+2017-01-18 08:22:43 [::1][-][binrdt7of0td0068m598kff9q2][info][application] $_GET = [
+    'r' => 'site/signup'
+]
+
+$_POST = [
+    '_csrf-frontend' => 'X0ZyU1lacGdtdTMqGiACEBZ1RR0JDjEeEQ0GBRsxQlITNiY8IxEXKA=='
+    'SignupForm' => [
+        'username' => 'manchaisit'
+        'email' => 'manchaisit@gmail.com'
+        'password' => 'maneve89cv'
+    ]
+    'signup-button' => ''
+]
+
+$_COOKIE = [
+    'advanced-backend' => 'bj6pcjfit3prgvvol9vmhj0dp7'
+    '_csrf-backend' => '9bda08826e96b3ab10f79d9e939fcb1437db865e842a9b2ae4f2d4d905012d89a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"GQY4IUWM41KmTGmas1GxXoLAuGFdnm9h\";}'
+    'advanced-frontend' => 'binrdt7of0td0068m598kff9q2'
+    '_csrf-frontend' => '67927224edb4d078a377c1d1d9662bf123d7844fba13584c6f014ad5b6feec25a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"23AyCzrwI37NPTAyNKtVBk25LpTozKgO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '207'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/project-management/frontend/web/index.php?r=site%2Fsignup'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th,en;q=0.8'
+    'HTTP_COOKIE' => 'advanced-backend=bj6pcjfit3prgvvol9vmhj0dp7; _csrf-backend=9bda08826e96b3ab10f79d9e939fcb1437db865e842a9b2ae4f2d4d905012d89a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22GQY4IUWM41KmTGmas1GxXoLAuGFdnm9h%22%3B%7D; advanced-frontend=binrdt7of0td0068m598kff9q2; _csrf-frontend=67927224edb4d078a377c1d1d9662bf123d7844fba13584c6f014ad5b6feec25a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%2223AyCzrwI37NPTAyNKtVBk25LpTozKgO%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\manlo\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/project-management/frontend/web/index.php'
+    'REMOTE_PORT' => '4789'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fsignup'
+    'REQUEST_URI' => '/project-management/frontend/web/index.php?r=site%2Fsignup'
+    'SCRIPT_NAME' => '/project-management/frontend/web/index.php'
+    'PHP_SELF' => '/project-management/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1484724163.521
+    'REQUEST_TIME' => 1484724163
+]
+2017-01-20 07:19:47 [::1][587f18a2b688a80640004f22][t9nd8mivcd9nnmbsppigpod330][error][yii\web\HttpException:403] exception 'yii\web\ForbiddenHttpException' with message 'คุณไม่ได้รับอนุญาตให้ดำเนินการนี้' in E:\project-management\vendor\yiisoft\yii2\filters\AccessControl.php:151
+Stack trace:
+#0 E:\project-management\vendor\yiisoft\yii2\filters\AccessControl.php(134): yii\filters\AccessControl->denyAccess(Object(yii\web\User))
+#1 E:\project-management\vendor\yiisoft\yii2\base\ActionFilter.php(73): yii\filters\AccessControl->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 E:\project-management\vendor\yiisoft\yii2\base\Component.php(540): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 E:\project-management\vendor\yiisoft\yii2\base\Controller.php(269): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 E:\project-management\vendor\yiisoft\yii2\web\Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 E:\project-management\vendor\yiisoft\yii2\base\Controller.php(152): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 E:\project-management\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('signup', Array)
+#8 E:\project-management\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('site/signup', Array)
+#9 E:\project-management\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 E:\project-management\frontend\web\index.php(17): yii\base\Application->run()
+#11 {main}
+2017-01-20 07:19:47 [::1][587f18a2b688a80640004f22][t9nd8mivcd9nnmbsppigpod330][info][application] $_GET = [
+    'r' => 'site/signup'
+]
+
+$_COOKIE = [
+    '_identity-backend' => 'f14ce90ee618d37ea83c295a2df27bf80837bcf39bc36da87b12fbcaa91155c8a:2:{i:0;s:17:\"_identity-backend\";i:1;s:80:\"[{\"$oid\":\"587f18a2b688a80640004f22\"},\"hj8M5RQ-dM7bLDuVGqb4VG_uSjr6ikJ-\",2592000]\";}'
+    '_csrf-frontend' => 'd246c4a4cd5796d4690d961b7a4663f4fc224e00d2f506020b5920c872ea90dda:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"6PTKJYbtMFtJ54h3ckNoC6ePgcOiRqsX\";}'
+    'advanced-frontend' => 't9nd8mivcd9nnmbsppigpod330'
+    '_identity-frontend' => 'c8dc2f6af7f26a72c8dc0cdbcabb170e4b4d30beffee8a2a6d1ac8f403d7961ea:2:{i:0;s:18:\"_identity-frontend\";i:1;s:80:\"[{\"$oid\":\"587f18a2b688a80640004f22\"},\"hj8M5RQ-dM7bLDuVGqb4VG_uSjr6ikJ-\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => MongoDB\BSON\ObjectID#1
+    (
+        [oid] => '587f18a2b688a80640004f22'
+    )
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th,en;q=0.8'
+    'HTTP_COOKIE' => '_identity-backend=f14ce90ee618d37ea83c295a2df27bf80837bcf39bc36da87b12fbcaa91155c8a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%22587f18a2b688a80640004f22%22%7D%2C%22hj8M5RQ-dM7bLDuVGqb4VG_uSjr6ikJ-%22%2C2592000%5D%22%3B%7D; _csrf-frontend=d246c4a4cd5796d4690d961b7a4663f4fc224e00d2f506020b5920c872ea90dda%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%226PTKJYbtMFtJ54h3ckNoC6ePgcOiRqsX%22%3B%7D; advanced-frontend=t9nd8mivcd9nnmbsppigpod330; _identity-frontend=c8dc2f6af7f26a72c8dc0cdbcabb170e4b4d30beffee8a2a6d1ac8f403d7961ea%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%22587f18a2b688a80640004f22%22%7D%2C%22hj8M5RQ-dM7bLDuVGqb4VG_uSjr6ikJ-%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\mongodb\\bin;C:\\Users\\manlo\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/project-management/frontend/web/index.php'
+    'REMOTE_PORT' => '1871'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Fsignup'
+    'REQUEST_URI' => '/project-management/frontend/web/index.php?r=site%2Fsignup'
+    'SCRIPT_NAME' => '/project-management/frontend/web/index.php'
+    'PHP_SELF' => '/project-management/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1484893187.254
+    'REQUEST_TIME' => 1484893187
+]
