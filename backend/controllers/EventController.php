@@ -8,6 +8,7 @@ use backend\models\EventSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use backend\models\backend\models;
 
 /**
  * EventController implements the CRUD actions for Event model.
@@ -35,7 +36,7 @@ class EventController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new EventSearch();
+        $searchModel = new Event();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 		
         $query = Event::find()->all();
@@ -46,6 +47,44 @@ class EventController extends Controller
         ]);
     }
 
+    public function actionSave(){
+    
+    	$request = \Yii::$app->request;
+    	$response = Yii::$app->response;
+    	$response->format = \yii\web\Response::FORMAT_JSON;
+    
+    	$event_name = $request->post('event_name', null);
+    	$start_date = $request->post('start_date', null);
+    	$end_date = $request->post('end_date', null);
+    	$description = $request->post('description', null);
+    	$type = $request->post('type', null);
+    	$color = $request->post('color', null);
+    	$model = null;
+    
+    
+    	if ($model == null){
+    		$model = new Event();
+    		$model->Event_name = $event_name;
+    		$model->Start_Date =  $start_date;
+    		$model->End_Date =  $end_date;
+    		$model->Discription =  $description;
+    		$model->Type =  $type;
+    		$model->Color =  $color;
+    	}
+    	 
+    	 
+    	if($model->save()){
+    
+    		$retData['success'] = true;
+    
+    	}else{
+    		$retData = ['success' => false];
+    	}
+    	echo json_encode($retData);
+    
+    }
+    
+    
     /**
      * Displays a single Event model.
      * @param integer $_id
@@ -123,4 +162,10 @@ class EventController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+    
+    public function beforeAction($action) {
+    	$this->enableCsrfValidation = false;
+    	return parent::beforeAction($action);
+    }
+    
 }

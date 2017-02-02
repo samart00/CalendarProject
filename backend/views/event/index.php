@@ -4,12 +4,50 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use richardfan\widget\JSRegister;
 use backend\models\Event;
+use yii\web\View;
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\EventSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
-
+$baseUrl = \Yii::getAlias('@web');
 $this->title = 'ปฏิทินส่วนบุคคล';
 $this->params['breadcrumbs'][] = $this->title;
+
+
+$str2 = <<<EOT
+$('#submit').click(function(){
+
+		var formData = new FormData();
+		formData.append('event_name', $('input[id=event_name]').val());
+		formData.append('start_date', $('input[id=datetimepicker1]').val());
+		formData.append('end_date', $('input[id=datetimepicker2]').val());
+		formData.append('description', $('textarea[id=description]').val());
+		var type = $('input[name="CheckType"]:checked').val();
+		formData.append('type', type);
+		
+		//ต้อง Get ค่าจากDatabase ตอนนี้Fixค่า
+		formData.append('color', (type == 1)?'#1a1aff':'#009900');
+		
+		var request = new XMLHttpRequest();
+		request.open("POST", "$baseUrl/index.php?r=event/save", true);
+		request.onreadystatechange = function () {
+	        if(request.readyState === XMLHttpRequest.DONE && request.status === 200) {
+				debugger;
+	       	    var response = request.responseText;
+	            if(typeof(response) == "string"){
+	            	response = JSON.parse(request.responseText);
+	            }
+	      
+	     
+
+	        }
+	    };
+		request.send(formData);
+		location.reload();
+
+});
+EOT;
+
+$this->registerJs($str2, View::POS_END);
 
 ?>
 
@@ -32,35 +70,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
 $(function () {
 
-    /* initialize the external events
-     -----------------------------------------------------------------*/
-     function ini_events(ele) {
-         ele.each(function () {
-
-           // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
-           // it doesn't need to have a start or end
-           var eventObject = {
-             title: $.trim($(this).text()) // use the element's text as the event title
-           };
-
-           // store the Event Object in the DOM element so we can get to it later
-           $(this).data('eventObject', eventObject);
-
-           // make the event draggable using jQuery UI
-           $(this).draggable({
-             zIndex: 1070,
-             revert: false, // will cause the event to go back to its
-             revertDuration: 0  //  original position after the drag
-           });
-
-         });
-       }
-
-     ini_events($('#external-events div.external-event'));
-
-     /* initialize the calendar
-      -----------------------------------------------------------------*/
-     //Date for the calendar events (dummy data)
      var date = new Date();
      var d = date.getDate(),
          m = date.getMonth(),
@@ -90,11 +99,7 @@ $(function () {
                }
              }
            },
-          
-              
-           
-           
-      //Random default events++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
       events: [
 	  <?php foreach ($value as $field): {?>
 	  
@@ -114,65 +119,27 @@ $(function () {
      
 
       editable: false,
-      droppable: false, // this allows things to be dropped onto the calendar !!!
-      drop: function (date, allDay) { // this function is called when something is dropped
+      disableDragging: true,
+      eventLimit: true,
 
-        // retrieve the dropped element's stored Event Object
-        var originalEventObject = $(this).data('eventObject');
+      //Test
+//       eventClick: function(event, element) {
 
-        // we need to copy it, so that multiple events don't have a reference to the same object
-        var copiedEventObject = $.extend({}, originalEventObject);
+//           event.title = "CLICKED!";
 
-        // assign it the date that was reported
-        copiedEventObject.start = date;
-        copiedEventObject.allDay = allDay;
-        copiedEventObject.backgroundColor = $(this).css("background-color");
-        copiedEventObject.borderColor = $(this).css("border-color");
+//           $('#calendar').fullCalendar('updateEvent', event);
+//       },
+//       eventRender: function(event, element) {
+//           element.append( "<span class='closeon'>X</span>" );
+//           element.find(".closeon").click(function() {
+//              $('#calendar').fullCalendar('removeEvents',event._id);
+//           });
+//       }
 
-        // render the event on the calendar
-        // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
-        $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
-
-        // is the "remove after drop" checkbox checked?
-        if ($('#drop-remove').is(':checked')) {
-          // if so, remove the element from the "Draggable Events" list
-          $(this).remove();
-        }
-
-      }
+      
     });
-
-    /* ADDING EVENTS */
-    var currColor = "#3c8dbc"; //Red by default
-    //Color chooser button
-    var colorChooser = $("#color-chooser-btn");
-    $("#color-chooser > li > a").click(function (e) {
-      e.preventDefault();
-      //Save color
-      currColor = $(this).css("color");
-      //Add color effect to button
-      $('#add-new-event').css({"background-color": currColor, "border-color": currColor});
-    });
-    $("#add-new-event").click(function (e) {
-      e.preventDefault();
-      //Get value and make sure it is not null
-      var val = $("#new-event").val();
-      if (val.length == 0) {
-        return;
-      }
-
-      //Create events
-      var event = $("<div />");
-      event.css({"background-color": currColor, "border-color": currColor, "color": "#fff"}).addClass("external-event");
-      event.html(val);
-      $('#external-events').prepend(event);
-
-      //Add draggable funtionality
-      ini_events(event);
-
-      //Remove event from text input
-      $("#new-event").val("");
-    });
+    
+   
   });
 $(function () {
 	jQuery('#datetimepicker1').datetimepicker();
@@ -205,7 +172,7 @@ $(function () {
 					        	
 					        	<div class="form-group">
 								  <label for="usr">หัวข้อกิจกรรม</label>
-								  <input type="text" class="form-control" id="usr">
+								  <input type="text" class="form-control" id="event_name">
 								</div>
 								<div class="form-group">
 					                <div class='input-group date' >
@@ -224,21 +191,22 @@ $(function () {
 					                </div>
 					            </div>
 								<div class="form-group">
-								  <label for="comment">แสดงความคิดเห็น</label>
-								  <textarea class="form-control" rows="5" id="comment"></textarea>
+								  <label for="comment">รายละเอียด</label>
+								  <textarea class="form-control" rows="5" id="description"></textarea>
 								</div>
 								<label for="usr">ประเภทกิจกรรม</label>
 								<div class="radio">
-								  <label><input type="radio" name="optradio">ประชุม</label><br>
-								  <label><input type="radio" name="optradio2">ส่วนตัว</label>
+								  <label><input type="radio" id="optradio" name="CheckType" value="1">ประชุม</label><br>
+								  <label><input type="radio" id="optradio2" name="CheckType" value="2">ส่วนตัว</label>
 					        	</div>
 					        	
 					      
 					        	
 					         </div>
 					        <div class="modal-footer">
-            				      <button type="button" class="btn btn-success" data-dismiss="modal">บันทึก</button>
-        						 <button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button>
+					        	<button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button>
+            				    <button type="button" class="btn btn-success" data-dismiss="modal" id="submit">บันทึก</button>
+        						 
 				        </div>
 				    </div>
 				</div>

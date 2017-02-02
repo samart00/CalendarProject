@@ -12,7 +12,7 @@ use Yii;
  * @property mixed $Discription
  * @property mixed $Start_Date
  * @property mixed $End_Date
- * @property mixed $Status
+ * @property mixed $Type
  * @property mixed $Color
  */
 class Event extends \yii\mongodb\ActiveRecord
@@ -36,7 +36,7 @@ class Event extends \yii\mongodb\ActiveRecord
             'Discription',
             'Start_Date',
             'End_Date',
-            'Status',
+            'Type',
             'Color',
         ];
     }
@@ -47,7 +47,7 @@ class Event extends \yii\mongodb\ActiveRecord
     public function rules()
     {
         return [
-            [['Event_name', 'Discription', 'Start_Date', 'End_Date', 'Status', 'Color'], 'safe']
+            [['Event_name', 'Discription', 'Start_Date', 'End_Date', 'Type', 'Color'], 'safe']
         ];
     }
 
@@ -62,8 +62,32 @@ class Event extends \yii\mongodb\ActiveRecord
             'Discription' => 'Discription',
             'Start_Date' => 'Start  Date',
             'End_Date' => 'End  Date',
-            'Status' => 'Status',
+            'Type' => 'Type',
             'Color' => 'Color',
         ];
+    }
+    
+    public function search($params)
+    {
+    	$query = Event::find();
+    
+    	// add conditions that should always apply here
+    
+    	
+    	$query = Event::find();
+    	
+    	
+    
+    	// grid filtering conditions
+    	$query->andFilterWhere(['like', '_id', $this->_id])
+    	->andFilterWhere(['like', 'Event_name', $this->Event_name])
+    	->andFilterWhere(['like', 'Discription', $this->Discription])
+    	->andFilterWhere(['like', 'Start_Date', $this->Start_Date])
+    	->andFilterWhere(['like', 'End_Date', $this->End_Date])
+    	->andFilterWhere(['like', 'Type', $this->Type])
+    	->andFilterWhere(['like', 'Color', $this->Color]);
+    
+    	$dataProvider = $query->all();
+    	return $dataProvider;
     }
 }
