@@ -24,7 +24,7 @@ $('#submit').click(function(){
 		formData.append('type', type);
 		
 		//ต้อง Get ค่าจากDatabase ตอนนี้Fixค่า
-		formData.append('color', (type == 1)?'#3333ff':'#00e600');
+		formData.append('color', (type == 1)?'#9999ff':'#99ff99');
 		
 		var request = new XMLHttpRequest();
 		request.open("POST", "$baseUrl/index.php?r=event/save", true);
@@ -162,6 +162,7 @@ $(function () {
 								  <input type="text" class="form-control" id="event_name">
 								</div>
 								<div class="form-group">
+								<label for="usr">เริ่มต้น</label>
 					                <div class='input-group date' >
 					                    <input id='datetimepicker1' type='text' class="form-control" />
 					                    <span class="input-group-addon">
@@ -170,6 +171,7 @@ $(function () {
 					                </div>
 					            </div>
 					            <div class="form-group">
+					            <label for="usr">สิ้นสุด</label>
 					                <div class='input-group date' >
 					                    <input id='datetimepicker2' type='text' class="form-control" />
 					                    <span class="input-group-addon">
@@ -214,6 +216,7 @@ $(function () {
 								  <input type="text" class="form-control" id="event_name_Edit">
 								</div>
 								<div class="form-group">
+								<label for="usr">เริ่มต้น</label>
 					                <div class='input-group date' >
 					                    <input id='datetimepicker_Start_Edit' type='text' class="form-control" />
 					                    <span class="input-group-addon">
@@ -222,6 +225,7 @@ $(function () {
 					                </div>
 					            </div>
 					            <div class="form-group">
+					            <label for="usr">สิ้นสุด</label>
 					                <div class='input-group date' >
 					                    <input id='datetimepicker_End_Edit' type='text' class="form-control" />
 					                    <span class="input-group-addon">
