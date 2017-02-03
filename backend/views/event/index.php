@@ -25,7 +25,7 @@ $('#submit').click(function(){
 		formData.append('type', type);
 		
 		//ต้อง Get ค่าจากDatabase ตอนนี้Fixค่า
-		formData.append('color', (type == 1)?'#1a1aff':'#009900');
+		formData.append('color', (type == 1)?'#3333ff':'#00e600');
 		
 		var request = new XMLHttpRequest();
 		request.open("POST", "$baseUrl/index.php?r=event/save", true);
@@ -89,8 +89,8 @@ $(function () {
 		  start: new Date(<?php echo "\"".$field->Start_Date."\"";?>),
 		  end: new Date(<?php echo "\"".$field->End_Date."\"";?>),
 		  discription: <?php echo "\"".$field->Discription."\"";?>,
-		  backgroundColor: <?php echo "\"".$field->Color."\"";?>, //red
-		  borderColor: <?php echo "\"".$field->Color."\"";?>, //red  
+		  backgroundColor: <?php echo "\"".$field->Color."\"";?>,
+		  borderColor:"#000000",
 		  type: <?php echo "\"".$field->Type."\"";?>,
 	    },
 	  <?php  }?>
@@ -192,8 +192,9 @@ $(function () {
 					        	
 					         </div>
 					        <div class="modal-footer">
+					        	<button type="button" class="btn btn-success" data-dismiss="modal" id="submit">บันทึก</button>
 					        	<button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button>
-            				    <button type="button" class="btn btn-success" data-dismiss="modal" id="submit">บันทึก</button>
+            				    
         						 
 				        </div>
 				    </div>
@@ -243,8 +244,9 @@ $(function () {
 					        	
 					         </div>
 					        <div class="modal-footer">
+					            <button type="button" class="btn btn-success" data-dismiss="modal" id="submit">บันทึก</button>
 					        	<button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button>
-            				    <button type="button" class="btn btn-success" data-dismiss="modal" id="submit">บันทึก</button>
+            				    
         						 
 				            </div>
 				    </div>
