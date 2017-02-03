@@ -15,7 +15,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
 $str2 = <<<EOT
 $('#submit').click(function(){
-
 		var formData = new FormData();
 		formData.append('event_name', $('input[id=event_name]').val());
 		formData.append('start_date', $('input[id=datetimepicker1]').val());
