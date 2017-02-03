@@ -27,6 +27,7 @@ class AppAsset extends AssetBundle
     	'js/jquery-ui.min.js',
     	'js/locale/th.js',
     	'js/jquery.datetimepicker.full.js',
+    	'js/date.format.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
