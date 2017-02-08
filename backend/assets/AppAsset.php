@@ -17,6 +17,7 @@ class AppAsset extends AssetBundle
     	'css/datatables.bootstrap.css',
     	'css/fullcalendar.min.css',
     	'css/jquery.datetimepicker.css',
+    	'css/fileinput.min.css',
     ];
     public $js = [
     	'js/jquery-3.1.1.js',
@@ -28,6 +29,9 @@ class AppAsset extends AssetBundle
     	'js/locale/th.js',
     	'js/jquery.datetimepicker.full.js',
     	'js/date.format.js',
+    	'js/fileinput.min.js',
+    	'js/sortable.min.js',
+    	'js/canvas-to-blob.min.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
