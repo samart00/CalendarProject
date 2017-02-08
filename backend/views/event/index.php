@@ -220,12 +220,12 @@ $(function () {
 // 					       			?>
 <!-- 					        </div> -->
 					        	<?php $form = ActiveForm::begin(['options' => ['enctype'=>'multipart/form-data']]); ?>
-					        	<div>
+<!-- 					        	<div> -->
 									<?= $form->field($model,'file')->fileInput() ?>
-								</div>
-								<div>
+<!-- 								</div> -->
+<!-- 								<div> -->
 								<?= Html::submitButton('อัฟโลหดไฟล์ CSV...',['class'=>'btn btn-primary']) ?>
-								</div>
+<!-- 								</div> -->
 								<?php ActiveForm::end(); ?>
 					        	<button type="button" class="btn btn-success" data-dismiss="modal" id="submit">บันทึก</button>
 					        	<button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button> 
