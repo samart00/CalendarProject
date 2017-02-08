@@ -4,8 +4,14 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use richardfan\widget\JSRegister;
 use backend\models\Event;
+//use backend\models\CsvForm;
 use yii\web\View;
-/* @var $this yii\web\View */
+use yii\bootstrap\Modal;
+//use yii\widgets\ActiveForm;
+use kartik\file\FileInput;
+
+
+/*x @var $this yii\web\View */
 /* @var $searchModel backend\models\EventSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 $baseUrl = \Yii::getAlias('@web');
@@ -24,7 +30,7 @@ $('#submit').click(function(){
 		formData.append('type', type);
 		
 		//ต้อง Get ค่าจากDatabase ตอนนี้Fixค่า
-		formData.append('color', (type == 1)?'#3333ff':'#00e600');
+		formData.append('color', (type == 1)?'#9999ff':'#99ff99');
 		
 		var request = new XMLHttpRequest();
 		request.open("POST", "$baseUrl/index.php?r=event/save", true);
@@ -74,7 +80,6 @@ $(function () {
                        $('#modalTitle').html("สร้างกิจกรรม");
                        $('#modalTitleEdit').html("แก้ไขกิจกรรม");
                        $('#modalBody').html(event.description);
-//                        $().html();
                        $('#eventUrl').attr('href',event.url);
                        $('#calendarModal').modal();
                }
@@ -146,17 +151,20 @@ $(function () {
           <div class="box box-primary">
             <div class="box-body no-padding">
               <!-- THE CALENDAR -->
+                
+                	
+                      
               <div id="calendar"></div>
-              	
+
               	<div id="calendarModal" class="modal fade">
 					<div class="modal-dialog">
-					    <div class="modal-content">
+					    <div class="modal-content ">
 					        <div class="modal-header">
-					            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">X</span> <span class="sr-only">close</span></button>
+					            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">x</span> <span class="sr-only">close</span></button>
 					            <h4 id="modalTitle" class="modal-title"></h4>
 					        </div>
 					        <div id="modalBody" class="modal-body">
-					        	
+															        	
 					        	<div class="form-group">
 								  <label for="usr">หัวข้อกิจกรรม</label>
 								  <input type="text" class="form-control" id="event_name">
@@ -182,24 +190,37 @@ $(function () {
 								  <textarea class="form-control" rows="5" id="description"></textarea>
 								</div>
 								<label for="usr">ประเภทกิจกรรม</label>
+															
 								<div class="radio">
 								  <label><input type="radio" id="optradio" name="CheckType" value="1">ประชุม</label><br>
 								  <label><input type="radio" id="optradio2" name="CheckType" value="2">ส่วนตัว</label>
 					        	</div>
-					        	
-					      
-					        	
+
 					         </div>
 					        <div class="modal-footer">
+					       		<div class="well well-small">
+					       			<span id="customCaption" class="text-success">No file selected</span>
+					       			<?php 
+					       			echo FileInput::widget([
+					       					'name' => 'attachment_30',
+					       					'pluginOptions' => [
+					       							'showPreview' => false,
+					       							'showCaption' => false,
+					       							'elCaptionText' => '#customCaption',
+					       							
+					       					]
+					       					
+					       			]);
+					       			?>
+					    
+					       		</div>
 					        	<button type="button" class="btn btn-success" data-dismiss="modal" id="submit">บันทึก</button>
-					        	<button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button>
-            				    
-        						 
+					        	<button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button> 
 				        </div>
 				    </div>
 				</div>
 				</div>
-				
+
 				<div id="calendarModalEdit" class="modal fade">
 					<div class="modal-dialog">
 					    <div class="modal-content">
@@ -239,14 +260,12 @@ $(function () {
 								  <label><input type="radio" id="optradio2_edit" name="CheckType" value="2">ส่วนตัว</label>
 					        	</div>
 					        	
-					      
-					        	
+					     					        	
 					         </div>
 					        <div class="modal-footer">
 					            <button type="button" class="btn btn-success" data-dismiss="modal" id="submit">บันทึก</button>
 					        	<button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button>
-            				    
-        						 
+ 
 				            </div>
 				    </div>
 				</div>
