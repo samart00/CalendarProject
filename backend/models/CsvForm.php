@@ -26,7 +26,7 @@ class CsvForm extends Model{
 				'csv_file'=>'Select File',
 		];
 	}
-// 	public function upload()
+// 	public function upload()x
 // 	{
 // 		if ($this->validate()) {
 // 			$this->csv_file->saveAs('uploads/' . $this->csv_file->baseName . '.' . $this->csv_file->extension);

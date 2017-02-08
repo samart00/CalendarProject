@@ -22,7 +22,7 @@
         "dmstr/yii2-adminlte-asset": "2.*",
         "richardfan1126/yii2-js-register": "*",
         "kartik-v/yii2-widget-fileinput": "@dev",
-        "kartik-v/yii2-widget-activeform": "@dev",
+       
         "kartik-v/bootstrap-fileinput": "dev-master"
     },
     "require-dev": {

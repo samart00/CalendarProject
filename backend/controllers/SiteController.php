@@ -140,7 +140,7 @@ class SiteController extends Controller
     				$this->redirect('././index');
     	
     			}
-    			//    echo   $content = fread($fp, filesize($file->tempName));
+    			//    echo   $content = fread($fp, filesize($file->tempName));x
     	
     		}
     	
