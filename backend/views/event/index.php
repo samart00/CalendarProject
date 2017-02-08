@@ -7,8 +7,8 @@ use backend\models\Event;
 //use backend\models\CsvForm;
 use yii\web\View;
 use yii\bootstrap\Modal;
-//use yii\widgets\ActiveForm;
 use kartik\file\FileInput;
+use yii\widgets\ActiveForm;
 
 
 /*x @var $this yii\web\View */
@@ -199,23 +199,34 @@ $(function () {
 					        	</div>
 
 					         </div>
-					        <div class="modal-footer">
-					       		<div class="well well-small">
-					       			<span id="customCaption" class="text-success">No file selected</span>
-					       			<?php 
-					       			echo FileInput::widget([
-					       					'name' => 'attachment_30',
-					       					'pluginOptions' => [
-					       							'showPreview' => false,
-					       							'showCaption' => false,
-					       							'elCaptionText' => '#customCaption',
-					       							
-					       					]
-					       					
-					       			]);
-					       			?>
+					         <div>
+					         	
 					    
-					       		</div>
+					          </div>
+					        <div class="modal-footer">
+<!-- 					        <div class="well">  -->
+<!-- 					        	<span id="customCaption" class="text-success">No file selected</span> -->
+					       			<?php 
+// 					       			echo FileInput::widget([
+// 					       					'name' => 'attachment_30',
+// 					       					'pluginOptions' => [
+// 					       							'showPreview' => false,
+// 					       							'showCaption' => false,
+// 					       							'elCaptionText' => '#customCaption',
+					       							
+// 					       					]
+					       					
+// 					       			]);
+// 					       			?>
+<!-- 					        </div> -->
+					        	<?php $form = ActiveForm::begin(['options' => ['enctype'=>'multipart/form-data']]); ?>
+					        	<div>
+									<?= $form->field($model,'file')->fileInput() ?>
+								</div>
+								<div>
+								<?= Html::submitButton('อัฟโลหดไฟล์ CSV...',['class'=>'btn btn-primary']) ?>
+								</div>
+								<?php ActiveForm::end(); ?>
 					        	<button type="button" class="btn btn-success" data-dismiss="modal" id="submit">บันทึก</button>
 					        	<button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button> 
 				        </div>
