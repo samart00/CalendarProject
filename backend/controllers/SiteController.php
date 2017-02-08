@@ -103,7 +103,7 @@ class SiteController extends Controller
     public function actionUpload()
     {
     	$model = new CsvForm();
-    	//x$file = CUploadedFile::getInstance($model,'csv_file');
+    	//$file = CUploadedFile::getInstance($model,'csv_file');
     	if(isset($_POST['CsvForm']))
     	{
     		$model->attributes=$_POST['CsvForm'];
