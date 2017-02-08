@@ -21,11 +21,11 @@ class CsvForm extends Model{
 		];
 	}
 
-	public function attributeLabels(){
-		return [
-				'csv_file'=>'Select File',
-		];
-	}
+// 	public function attributeLabels(){
+// 		return [
+// 				'csv_file'=>'Select File',
+// 		];
+// 	}
 // 	public function upload()
 // 	{
 // 		if ($this->validate()) {
