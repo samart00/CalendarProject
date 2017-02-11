@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use richardfan\widget\JSRegister;
 use backend\models\Event;
+//use backend\models\CsvForm;
 use yii\web\View;
 use yii\bootstrap\Modal;
 use kartik\file\FileInput;
@@ -61,7 +62,7 @@ $(function () {
          y = date.getFullYear();
      $('#calendar').fullCalendar({
        header: {
-         left: 'prev,next, today, createEvent',
+         left: 'prev,next, today, createEvent,createHoliday',
          center: 'title',
          right: 'listYear,month,agendaWeek,agendaDay'
        },
@@ -82,7 +83,13 @@ $(function () {
                        $('#eventUrl').attr('href',event.url);
                        $('#calendarModal').modal();
                }
+             },
+         	createHoliday: {
+             text: 'สร้างวันหยุด',
+          	   click:  function() {
+          		 document.location = "index.php?r=upload";
              }
+           }
            },
 
       events: [
@@ -122,13 +129,46 @@ $(function () {
     		  $("#optradio_edit").prop('checked', true);
     	  }else if(check_radio == "2"){
     		  $("#optradio2_edit").prop('checked', true);
-    	  }else if(check_radio == "3"){
-    		  $("#optradio3_edit").prop('checked', true);
     	  }
     	  $('#calendarModalEdit').modal('show');
     	  
       },
-    });
+    }
+
+     <?php
+     	if(isset($_FILES['image'])){
+     	$errors= array();
+     	$file_name = $_FILES['image']['name'];
+     	$file_size =$_FILES['image']['size'];
+     	$file_tmp =$_FILES['image']['tmp_name'];
+     	$file_type=$_FILES['image']['type'];
+     	$file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
+     
+     	$expensions= array("csv");
+     	
+     	if(in_array($file_ext,$expensions)=== false){
+     		$errors[]="extension not allowed, please choose a CSV file.";
+     	}
+     
+     	if($file_size > 2097152){
+     	   $errors[]='File size must beww excately 2 MB';
+     	}
+     	
+
+     	$targetfolder = 'images/';
+     	
+     	//Usage of basename() function
+//      	$targetfolder = $targetfolder . basename( $_FILES['image']['name']) ;
+//      	$uploads_dir = 'E:/PCMS/CalendarProject1/backend/views/event/images';
+     	if(empty($errors)==true){
+     		move_uploaded_file($file_tmp,$targetfolder.$file_name);
+     	}else{
+     		print_r($errors);
+     	}
+     }
+		?>
+     
+     );
     
    
   });
@@ -138,6 +178,9 @@ $(function () {
 	jQuery('#datetimepicker_Start_Edit').datetimepicker();
 	jQuery('#datetimepicker_End_Edit').datetimepicker();
 });
+
+
+
 	</script>
 <?php JSRegister::end(); ?>
 
@@ -196,15 +239,20 @@ $(function () {
 															
 								<div class="radio">
 								  <label><input type="radio" id="optradio" name="CheckType" value="1">ประชุม</label><br>
-								  <label><input type="radio" id="optradio2" name="CheckType" value="2">ส่วนตัว</label><br>
-								  <label><input type="radio" id="optradio3_edit" name="CheckType" value="3">วันหยุด</label>
+								  <label><input type="radio" id="optradio2" name="CheckType" value="2">ส่วนตัว</label>
 					        	</div>
-					        </div>
-					
+
+					         </div>
+					         
 					        <div class="modal-footer">
+					        
+					        <form action="" name="sendFile" method="POST" enctype="multipart/form-data">
+					        	<input type="file" onchange="sendFile.submit ();" class="btn btn-success" name="image" />
+					        </form>	
+					        
 					        	<button type="button" class="btn btn-success" data-dismiss="modal" id="submit">บันทึก</button>
 					        	<button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button> 
-				           </div>
+				        </div>
 				    </div>
 				</div>
 				</div>
@@ -247,8 +295,7 @@ $(function () {
 								<label for="usr">ประเภทกิจกรรม</label>
 								<div class="radio" id="type">
 								  <label><input type="radio" id="optradio_edit" name="CheckType" value="1">ประชุม</label><br>
-								  <label><input type="radio" id="optradio2_edit" name="CheckType" value="2">ส่วนตัว</label><br>
-								  <label><input type="radio" id="optradio3_edit" name="CheckType" value="3">วันหยุด</label>
+								  <label><input type="radio" id="optradio2_edit" name="CheckType" value="2">ส่วนตัว</label>
 					        	</div>
 					        	
 					     					        	
@@ -273,4 +320,5 @@ $(function () {
     </section>
     <!-- /.content -->
   </div>
+  
 </div>
