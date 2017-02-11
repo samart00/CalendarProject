@@ -4,7 +4,6 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use richardfan\widget\JSRegister;
 use backend\models\Event;
-//use backend\models\CsvForm;
 use yii\web\View;
 use yii\bootstrap\Modal;
 use kartik\file\FileInput;
@@ -123,6 +122,8 @@ $(function () {
     		  $("#optradio_edit").prop('checked', true);
     	  }else if(check_radio == "2"){
     		  $("#optradio2_edit").prop('checked', true);
+    	  }else if(check_radio == "3"){
+    		  $("#optradio3_edit").prop('checked', true);
     	  }
     	  $('#calendarModalEdit').modal('show');
     	  
@@ -195,41 +196,15 @@ $(function () {
 															
 								<div class="radio">
 								  <label><input type="radio" id="optradio" name="CheckType" value="1">ประชุม</label><br>
-								  <label><input type="radio" id="optradio2" name="CheckType" value="2">ส่วนตัว</label>
+								  <label><input type="radio" id="optradio2" name="CheckType" value="2">ส่วนตัว</label><br>
+								  <label><input type="radio" id="optradio3_edit" name="CheckType" value="3">วันหยุด</label>
 					        	</div>
-
-					         </div>
-					         <div>
-					         	
-					    
-					          </div>
+					        </div>
+					
 					        <div class="modal-footer">
-<!-- 					        <div class="well">  -->
-<!-- 					        	<span id="customCaption" class="text-success">No file selected</span> -->
-					       			<?php 
-// 					       			echo FileInput::widget([
-// 					       					'name' => 'attachment_30',
-// 					       					'pluginOptions' => [
-// 					       							'showPreview' => false,
-// 					       							'showCaption' => false,
-// 					       							'elCaptionText' => '#customCaption',
-					       							
-// 					       					]
-					       					
-// 					       			]);
-// 					       			?>
-<!-- 					        </div> -->
-					        	<?php $form = ActiveForm::begin(['options' => ['enctype'=>'multipart/form-data']]); ?>
-<!-- 					        	<div> -->
-									<?= $form->field($model,'file')->fileInput() ?>
-<!-- 								</div> -->
-<!-- 								<div> -->
-								<?= Html::submitButton('อัฟโลหดไฟล์ CSV...',['class'=>'btn btn-primary']) ?>
-<!-- 								</div> -->
-								<?php ActiveForm::end(); ?>
 					        	<button type="button" class="btn btn-success" data-dismiss="modal" id="submit">บันทึก</button>
 					        	<button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button> 
-				        </div>
+				           </div>
 				    </div>
 				</div>
 				</div>
@@ -272,7 +247,8 @@ $(function () {
 								<label for="usr">ประเภทกิจกรรม</label>
 								<div class="radio" id="type">
 								  <label><input type="radio" id="optradio_edit" name="CheckType" value="1">ประชุม</label><br>
-								  <label><input type="radio" id="optradio2_edit" name="CheckType" value="2">ส่วนตัว</label>
+								  <label><input type="radio" id="optradio2_edit" name="CheckType" value="2">ส่วนตัว</label><br>
+								  <label><input type="radio" id="optradio3_edit" name="CheckType" value="3">วันหยุด</label>
 					        	</div>
 					        	
 					     					        	
