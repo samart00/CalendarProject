@@ -247,8 +247,9 @@ $(function() {
 								<label for="usr">ประเภทกิจกรรม</label>
 															
 								<div class="radio">
-								  <label><input type="radio" id="optradio" name="CheckType" value="1" >ประชุม</label><br>
-								  <label><input type="radio" id="optradio2" name="CheckType" value="2" >ส่วนตัว</label>
+								  <label><input type="radio" id="optradio" name="CheckType" value="1" data-error="กรุณาเลือก" required>ประชุม</label><br>
+								  <label><input type="radio" id="optradio2" name="CheckType" value="2" data-error="กรุณาเลือก" required>ส่วนตัว</label>
+					        		<div class="help-block with-errors"></div>
 					        	</div>
 
 					         </div>
