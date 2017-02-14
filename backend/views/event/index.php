@@ -135,38 +135,7 @@ $(function () {
       },
     }
 
-     <?php
-     	if(isset($_FILES['image'])){
-     	$errors= array();
-     	$file_name = $_FILES['image']['name'];
-     	$file_size =$_FILES['image']['size'];
-     	$file_tmp =$_FILES['image']['tmp_name'];
-     	$file_type=$_FILES['image']['type'];
-     	$file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
-     
-     	$expensions= array("csv");
-     	
-     	if(in_array($file_ext,$expensions)=== false){
-     		$errors[]="extension not allowed, please choose a CSV file.";
-     	}
-     
-     	if($file_size > 2097152){
-     	   $errors[]='File size must beww excately 2 MB';
-     	}
-     	
-
-     	$targetfolder = 'images/';
-     	
-     	//Usage of basename() function
-//      	$targetfolder = $targetfolder . basename( $_FILES['image']['name']) ;
-//      	$uploads_dir = 'E:/PCMS/CalendarProject1/backend/views/event/images';
-     	if(empty($errors)==true){
-     		move_uploaded_file($file_tmp,$targetfolder.$file_name);
-     	}else{
-     		print_r($errors);
-     	}
-     }
-		?>
+    
      
      );
     
@@ -256,9 +225,9 @@ $(function() {
 					         </form>
 					        <div class="modal-footer">
 					        
-					        <form action="" name="sendFile" method="POST" enctype="multipart/form-data">
-					        	<input type="file" onchange="sendFile.submit ();" class="btn btn-success" name="image" />
-					        </form>	
+<!-- 					        <form action="" name="sendFile" method="POST" enctype="multipart/form-data"> -->
+<!-- 					        	<input type="file" onchange="sendFile.submit ();" class="btn btn-success" name="image" /> -->
+<!-- 					        </form>	 -->
 					        
 					        	<button type="button" class="btn btn-success" data-dismiss="modal" id="submit">บันทึก</button>
 					        	<button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button> 
