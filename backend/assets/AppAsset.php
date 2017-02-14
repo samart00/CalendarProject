@@ -32,6 +32,7 @@ class AppAsset extends AssetBundle
     	'js/fileinput.min.js',
     	//'js/sortable.min.js',
     	'js/canvas-to-blob.min.js',
+    	'js/validator.min.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

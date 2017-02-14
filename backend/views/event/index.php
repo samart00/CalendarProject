@@ -179,7 +179,9 @@ $(function () {
 	jQuery('#datetimepicker_End_Edit').datetimepicker();
 });
 
-
+$(function() {
+	$('#validate').validator()
+});
 
 	</script>
 <?php JSRegister::end(); ?>
@@ -201,49 +203,57 @@ $(function () {
               <div id="calendar"></div>
 
               	<div id="calendarModal" class="modal fade">
+              		
 					<div class="modal-dialog">
 					    <div class="modal-content ">
 					        <div class="modal-header">
 					            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">x</span> <span class="sr-only">close</span></button>
 					            <h4 id="modalTitle" class="modal-title"></h4>
 					        </div>
+					       <form action="" role="form" data-toggle="validator" id="validate">
 					        <div id="modalBody" class="modal-body">
-															        	
+														        	
 					        	<div class="form-group">
 								  <label for="usr">หัวข้อกิจกรรม</label>
-								  <input type="text" class="form-control" id="event_name">
+								  <input type="text" class="form-control " id="event_name" data-error="กรุณากรอกข้อมูล" required>
+								  <div class="help-block with-errors"></div>
 								</div>
+								
 								<div class="form-group">
 								<label for="usr">เริ่มต้น</label>
 					                <div class='input-group date' >
-					                    <input id='datetimepicker1' type='text' class="form-control" />
+					                    <input id='datetimepicker1' type='text' class="form-control" data-error="กรุณากรอกข้อมูล" required/>
 					                    <span class="input-group-addon">
 					                        <span class="glyphicon glyphicon-calendar"></span>
 					                    </span>
 					                </div>
+					                <div class="help-block with-errors"></div>
 					            </div>
 					            <div class="form-group">
 					            <label for="usr">สิ้นสุด</label>
 					                <div class='input-group date' >
-					                    <input id='datetimepicker2' type='text' class="form-control" />
+					                    <input id='datetimepicker2' type='text' class="form-control" data-error="กรุณากรอกข้อมูล" required/>
 					                    <span class="input-group-addon">
 					                        <span class="glyphicon glyphicon-calendar"></span>
 					                    </span>
 					                </div>
+					                <div class="help-block with-errors"></div>
 					            </div>
 								<div class="form-group">
 								  <label for="comment">รายละเอียด</label>
-								  <textarea class="form-control" rows="5" id="description"></textarea>
+								  <textarea class="form-control" rows="5" id="description" data-error="กรุณากรอกข้อมูล" required></textarea>
+									<div class="help-block with-errors"></div>
 								</div>
+								
 								<label for="usr">ประเภทกิจกรรม</label>
 															
 								<div class="radio">
-								  <label><input type="radio" id="optradio" name="CheckType" value="1">ประชุม</label><br>
-								  <label><input type="radio" id="optradio2" name="CheckType" value="2">ส่วนตัว</label>
+								  <label><input type="radio" id="optradio" name="CheckType" value="1" >ประชุม</label><br>
+								  <label><input type="radio" id="optradio2" name="CheckType" value="2" >ส่วนตัว</label>
 					        	</div>
 
 					         </div>
-					         
+					         </form>
 					        <div class="modal-footer">
 					        
 					        <form action="" name="sendFile" method="POST" enctype="multipart/form-data">
@@ -255,6 +265,7 @@ $(function () {
 				        </div>
 				    </div>
 				</div>
+				
 				</div>
 
 				<div id="calendarModalEdit" class="modal fade">
