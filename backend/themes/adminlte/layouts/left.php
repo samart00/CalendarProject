@@ -26,7 +26,9 @@
                 		'icon' => 'fa fa-share',
                 		'url' => '#',
                 		'items' => [
-	                				['label' => 'ปฏิทินส่วนบุคคล', 'icon' => 'fa fa-calendar', 'url' => ['/event'],],
+                					['label' => 'ปฏิทินแผนก', 'icon' => 'fa fa-calendar', 'url' => ['/calendardevision'],],
+                					['label' => 'ปฏิทินโครงการ', 'icon' => 'fa fa-calendar', 'url' => ['/calendarproject'],],
+                					['label' => 'ปฏิทินส่วนบุคคล', 'icon' => 'fa fa-calendar', 'url' => ['/event'],],
 	                				//['label' => 'ปฏิทินโครงการ', 'icon' => 'fa fa-file-code-o', 'url' => ['/event'],],
                 				   ],
                 		],
