@@ -241,8 +241,7 @@ $(function() {
 					            </div>
 								<div class="form-group">
 								  <label for="comment">รายละเอียด</label>
-								  <textarea class="form-control" rows="5" id="description" data-error="กรุณากรอกข้อมูล" required></textarea>
-									<div class="help-block with-errors"></div>
+								  <textarea class="form-control" rows="5" id="description"></textarea>
 								</div>
 								
 								<label for="usr">ประเภทกิจกรรม</label>
