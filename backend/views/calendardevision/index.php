@@ -184,7 +184,18 @@ $(function () {
 	</script>
 <?php JSRegister::end(); ?>
 
-
+<style type="text/css">
+.required{
+    height:20px;
+    color:#FF0000;
+    padding-left:5px;
+    padding-right:5px;
+    font-size:12px;
+    line-height:15px;
+    width:100px;
+    float:none;
+}
+</style>
 
 <div class="event-index">
    <div class="wrapper">
@@ -210,22 +221,28 @@ $(function () {
 					        <div id="modalBody" class="modal-body">
 															        	
 					        	<div class="form-group">
-								  <label for="usr">หัวข้อกิจกรรม</label>
-								  <input type="text" class="form-control" id="event_name">
+								  <label for="usr">หัวข้อกิจกรรม
+								  	<span class="required"> * </span>
+								  </label>
+								  <input type="text" class="form-control" placeholder="หัวข้อกิจกรรม" id="event_name">
 								</div>
 								<div class="form-group">
-								<label for="usr">เริ่มต้น</label>
+								<label for="usr">เริ่มต้น
+									<span class="required"> * </span>
+								</label>
 					                <div class='input-group date' >
-					                    <input id='datetimepicker1' type='text' class="form-control" />
+					                    <input id='datetimepicker1' type='text' placeholder="วันที่เริ่มต้น" class="form-control" />
 					                    <span class="input-group-addon">
 					                        <span class="glyphicon glyphicon-calendar"></span>
 					                    </span>
 					                </div>
 					            </div>
 					            <div class="form-group">
-					            <label for="usr">สิ้นสุด</label>
+					            <label for="usr">สิ้นสุด
+					            	<span class="required"> * </span>
+					            </label>
 					                <div class='input-group date' >
-					                    <input id='datetimepicker2' type='text' class="form-control" />
+					                    <input id='datetimepicker2' type='text' placeholder="วันที่สิ้นสุด"  class="form-control" />
 					                    <span class="input-group-addon">
 					                        <span class="glyphicon glyphicon-calendar"></span>
 					                    </span>
@@ -235,11 +252,13 @@ $(function () {
 								  <label for="comment">รายละเอียด</label>
 								  <textarea class="form-control" rows="5" id="description"></textarea>
 								</div>
-								<label for="usr">ประเภทกิจกรรม</label>
+								<label for="usr">ประเภทกิจกรรม
+									<span class="required"> * </span>
+								</label>
 															
 								<div class="radio">
-								  <label><input type="radio" id="optradio" name="CheckType" value="1">ประชุม</label><br>
-								  <label><input type="radio" id="optradio2" name="CheckType" value="2">ส่วนตัว</label>
+								  <label><input type="radio" id="optradio" name="CheckType" value="1"><span class="fc-event-dot" style="background-color:#9999ff"></span>  ประชุม</label><br>
+								  <label><input type="radio" id="optradio2" name="CheckType" value="2"><span class="fc-event-dot" style="background-color:#99ff99"></span> ส่วนตัว</label>
 					        	</div>
 
 					         </div>
@@ -263,11 +282,15 @@ $(function () {
 					        <div id="modalBody" class="modal-body">
 					        	
 					        	<div class="form-group">
-								  <label for="usr">หัวข้อกิจกรรม</label>
+								  <label for="usr">หัวข้อกิจกรรม
+								  	<span class="required"> * </span>
+								  </label>
 								  <input type="text" class="form-control" id="event_name_Edit">
 								</div>
 								<div class="form-group">
-								<label for="usr">เริ่มต้น</label>
+								<label for="usr">เริ่มต้น
+									<span class="required"> * </span>
+								</label>
 					                <div class='input-group date' >
 					                    <input id='datetimepicker_Start_Edit' type='text' class="form-control" />
 					                    <span class="input-group-addon">
@@ -276,7 +299,9 @@ $(function () {
 					                </div>
 					            </div>
 					            <div class="form-group">
-					            <label for="usr">สิ้นสุด</label>
+					            <label for="usr">สิ้นสุด
+					            	<span class="required"> * </span>
+					            </label>
 					                <div class='input-group date' >
 					                    <input id='datetimepicker_End_Edit' type='text' class="form-control" />
 					                    <span class="input-group-addon">
@@ -288,10 +313,12 @@ $(function () {
 								  <label for="comment">รายละเอียด</label>
 								  <textarea class="form-control" rows="5" id="description_Edit"></textarea>
 								</div>
-								<label for="usr">ประเภทกิจกรรม</label>
+								<label for="usr">ประเภทกิจกรรม
+									<span class="required"> * </span>
+								</label>
 								<div class="radio" id="type">
-								  <label><input type="radio" id="optradio_edit" name="CheckType" value="1">ประชุม</label><br>
-								  <label><input type="radio" id="optradio2_edit" name="CheckType" value="2">ส่วนตัว</label>
+								  <label><input type="radio" id="optradio_edit" name="CheckType" value="1"><span class="fc-event-dot" style="background-color:#9999ff"></span> ประชุม</label><br>
+								  <label><input type="radio" id="optradio2_edit" name="CheckType" value="2"><span class="fc-event-dot" style="background-color:#99ff99"></span> ส่วนตัว</label>
 					        	</div>
 					        	
 					     					        	
