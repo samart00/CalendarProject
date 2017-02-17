@@ -156,6 +156,19 @@ $(function() {
 	</script>
 <?php JSRegister::end(); ?>
 
+<style type="text/css">
+.required{
+    height:20px;
+    color:#FF0000;
+    padding-left:5px;
+    padding-right:5px;
+    font-size:12px;
+    line-height:15px;
+    width:100px;
+    float:none;
+}
+</style>
+
 <div class="event-index">
    <div class="wrapper">
     <section class="content">
@@ -182,15 +195,19 @@ $(function() {
 					        <div id="modalBody" class="modal-body">
 														        	
 					        	<div class="form-group">
-								  <label for="usr">หัวข้อกิจกรรม</label>
-								  <input type="text" class="form-control " id="event_name" data-error="กรุณากรอกข้อมูล" required>
+								  <label for="usr">หัวข้อกิจกรรม
+								  	<span class="required"> * </span>
+								  </label>
+								  <input type="text" class="form-control " id="event_name" placeholder="หัวข้อกิจกรรม" data-error="กรุณากรอกข้อมูล" required>
 								  <div class="help-block with-errors"></div>
 								</div>
 								
 								<div class="form-group">
-								<label for="usr">เริ่มต้น</label>
+								<label for="usr">เริ่มต้น
+									<span class="required"> * </span>
+								</label>
 					                <div class='input-group date' >
-					                    <input id='datetimepicker1' type='text' class="form-control" data-error="กรุณากรอกข้อมูล" required/>
+					                    <input id='datetimepicker1' type='text' class="form-control" placeholder="วันที่เริ่มต้น" data-error="กรุณากรอกข้อมูล" required/>
 					                    <span class="input-group-addon">
 					                        <span class="glyphicon glyphicon-calendar"></span>
 					                    </span>
@@ -198,9 +215,11 @@ $(function() {
 					                <div class="help-block with-errors"></div>
 					            </div>
 					            <div class="form-group">
-					            <label for="usr">สิ้นสุด</label>
+					            <label for="usr">สิ้นสุด
+					            	<span class="required"> * </span>
+					            </label>
 					                <div class='input-group date' >
-					                    <input id='datetimepicker2' type='text' class="form-control" data-error="กรุณากรอกข้อมูล" required/>
+					                    <input id='datetimepicker2' type='text' class="form-control" placeholder="วันที่สิ้นสุด" data-error="กรุณากรอกข้อมูล" required/>
 					                    <span class="input-group-addon">
 					                        <span class="glyphicon glyphicon-calendar"></span>
 					                    </span>
@@ -209,7 +228,7 @@ $(function() {
 					            </div>
 								<div class="form-group">
 								  <label for="comment">รายละเอียด</label>
-								  <textarea class="form-control" rows="5" id="description"></textarea>
+								  <textarea class="form-control" rows="5" placeholder="รายละเอียด" id="description"></textarea>
 								</div>
 					         </div>
 					         </form>

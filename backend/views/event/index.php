@@ -191,7 +191,7 @@ $(function() {
 					            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">x</span> <span class="sr-only">close</span></button>
 					            <h4 id="modalTitle" class="modal-title"></h4>
 					        </div>
-					       <form action="" role="form" data-toggle="validator" id="validate" onsubmit="return chk_form()">
+					       <form action="" role="form" data-toggle="validator" id="validate">
 					        <div id="modalBody" class="modal-body">
 														        	
 					        	<div class="form-group">
