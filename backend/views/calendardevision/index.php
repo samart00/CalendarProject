@@ -246,10 +246,6 @@ $(function () {
 					         
 					        <div class="modal-footer">
 					        
-					        <form action="" name="sendFile" method="POST" enctype="multipart/form-data">
-					        	<input type="file" onchange="sendFile.submit ();" class="btn btn-success" name="image" />
-					        </form>	
-					        
 					        	<button type="button" class="btn btn-success" data-dismiss="modal" id="submit">บันทึก</button>
 					        	<button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button> 
 				        </div>
