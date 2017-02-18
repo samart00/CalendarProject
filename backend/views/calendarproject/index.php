@@ -219,53 +219,64 @@ $(function () {
 					            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">x</span> <span class="sr-only">close</span></button>
 					            <h4 id="modalTitle" class="modal-title"></h4>
 					        </div>
+					       <form action="" role="form" data-toggle="validator" id="validate" method="post">
 					        <div id="modalBody" class="modal-body">
-															        	
+														        	
 					        	<div class="form-group">
 								  <label for="usr">หัวข้อกิจกรรม
 								  	<span class="required"> * </span>
 								  </label>
-								  <input type="text" class="form-control" placeholder="หัวข้อกิจกรรม" id="event_name">
+								  
+								  <input type="text" class="form-control " id="event_name" placeholder="หัวข้อกิจกรรม" data-error="กรุณากรอกข้อมูล" required>
+								  <div class="help-block with-errors"></div>
 								</div>
+								
 								<div class="form-group">
 								<label for="usr">เริ่มต้น
 									<span class="required"> * </span>
 								</label>
 					                <div class='input-group date' >
-					                    <input id='datetimepicker1' type='text' placeholder="วันที่เริ่มต้น" class="form-control" />
+					                    <input id='datetimepicker1' type='text' class="form-control" placeholder="วันที่เริ่มต้น" data-error="กรุณากรอกข้อมูล" required/>
 					                    <span class="input-group-addon">
 					                        <span class="glyphicon glyphicon-calendar"></span>
 					                    </span>
 					                </div>
+					                <div class="help-block with-errors"></div>
 					            </div>
 					            <div class="form-group">
 					            <label for="usr">สิ้นสุด
 					            	<span class="required"> * </span>
 					            </label>
 					                <div class='input-group date' >
-					                    <input id='datetimepicker2' type='text' placeholder="วันที่สิ้นสุด" class="form-control" />
+					                    <input id='datetimepicker2' type='text' class="form-control" placeholder="วันที่สิ้นสุด" data-error="กรุณากรอกข้อมูล" required/>
 					                    <span class="input-group-addon">
 					                        <span class="glyphicon glyphicon-calendar"></span>
 					                    </span>
 					                </div>
+					                <div class="help-block with-errors"></div>
 					            </div>
 								<div class="form-group">
 								  <label for="comment">รายละเอียด</label>
 								  <textarea class="form-control" rows="5" placeholder="รายละเอียด" id="description"></textarea>
 								</div>
+								
 								<label for="usr">ประเภทกิจกรรม
 									<span class="required"> * </span>
 								</label>
 															
 								<div class="radio">
-								  <label><input type="radio" id="optradio" name="CheckType" value="1"><span class="fc-event-dot" style="background-color:#9999ff"></span> ประชุม</label><br>
-								  <label><input type="radio" id="optradio2" name="CheckType" value="2"><span class="fc-event-dot" style="background-color:#99ff99"></span> ส่วนตัว</label>
+								  <label><input type="radio" id="optradio" name="CheckType" value="1" data-error="กรุณาเลือก" required><span class="fc-event-dot" style="background-color:#9999ff"></span> ประชุม</label><br>
+								  <label><input type="radio" id="optradio2" name="CheckType" value="2" data-error="กรุณาเลือก" required><span class="fc-event-dot" style="background-color:#99ff99"></span> ส่วนตัว</label>
+					        		<div class="help-block with-errors"></div>
 					        	</div>
 
 					         </div>
-					         
+					         </form>
 					        <div class="modal-footer">
 					        
+<!-- 					        <form action="" name="sendFile" method="POST" enctype="multipart/form-data"> -->
+<!-- 					        	<input type="file" onchange="sendFile.submit ();" class="btn btn-success" name="image" /> -->
+<!-- 					        </form>	 -->
 					        
 					        	<button type="button" class="btn btn-success" data-dismiss="modal" id="submit">บันทึก</button>
 					        	<button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button> 
