@@ -150,10 +150,11 @@ $(function () {
    
   });
 $(function () {
-	jQuery('#datetimepicker1').datetimepicker();
-	jQuery('#datetimepicker2').datetimepicker();
-	jQuery('#datetimepicker_Start_Edit').datetimepicker();
-	jQuery('#datetimepicker_End_Edit').datetimepicker();
+	jQuery.datetimepicker.setLocale('th');
+	jQuery('#datetimepicker1').datetimepicker({minDate:'0'});
+	jQuery('#datetimepicker2').datetimepicker({minDate:'0'});
+	jQuery('#datetimepicker_Start_Edit').datetimepicker({minDate:'0'});
+	jQuery('#datetimepicker_End_Edit').datetimepicker({minDate:'0'});
 });
 
 $(function() {
