@@ -173,10 +173,39 @@ $(function () {
    
   });
 $(function () {
-	jQuery('#datetimepicker1').datetimepicker();
-	jQuery('#datetimepicker2').datetimepicker();
-	jQuery('#datetimepicker_Start_Edit').datetimepicker();
-	jQuery('#datetimepicker_End_Edit').datetimepicker();
+	jQuery.datetimepicker.setLocale('th');
+	jQuery('#datetimepicker1').datetimepicker({
+		onShow:function( ct ){
+			   this.setOptions({
+			    maxDate:jQuery('#datetimepicker2').val()?jQuery('#datetimepicker2').val():false
+			   })
+			  },
+		timepicker:false
+	});
+	jQuery('#datetimepicker2').datetimepicker({
+		onShow:function( ct ){
+			   this.setOptions({
+			    minDate:jQuery('#datetimepicker1').val()?jQuery('#datetimepicker1').val():false
+			   })
+			  },
+		 timepicker:false
+	});
+	jQuery('#datetimepicker_Start_Edit').datetimepicker({
+		onShow:function( ct ){
+			   this.setOptions({
+			    maxDate:jQuery('#datetimepicker_End_Edit').val()?jQuery('#datetimepicker_End_Edit').val():false
+			   })
+			  },
+		timepicker:false
+	});
+	jQuery('#datetimepicker_End_Edit').datetimepicker({
+		onShow:function( ct ){
+			   this.setOptions({
+			    minDate:jQuery('#datetimepicker_Start_Edit').val()?jQuery('#datetimepicker_Start_Edit').val():false
+			   })
+			  },
+		 timepicker:false
+	});
 });
 
 

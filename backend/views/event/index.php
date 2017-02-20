@@ -151,10 +151,38 @@ $(function () {
   });
 $(function () {
 	jQuery.datetimepicker.setLocale('th');
-	jQuery('#datetimepicker1').datetimepicker({minDate:'0'});
-	jQuery('#datetimepicker2').datetimepicker({minDate:'0'});
-	jQuery('#datetimepicker_Start_Edit').datetimepicker({minDate:'0'});
-	jQuery('#datetimepicker_End_Edit').datetimepicker({minDate:'0'});
+	jQuery('#datetimepicker1').datetimepicker({
+		onShow:function( ct ){
+			   this.setOptions({
+			    maxDate:jQuery('#datetimepicker2').val()?jQuery('#datetimepicker2').val():false
+			   })
+			  },
+		timepicker:false
+	});
+	jQuery('#datetimepicker2').datetimepicker({
+		onShow:function( ct ){
+			   this.setOptions({
+			    minDate:jQuery('#datetimepicker1').val()?jQuery('#datetimepicker1').val():false
+			   })
+			  },
+		 timepicker:false
+	});
+	jQuery('#datetimepicker_Start_Edit').datetimepicker({
+		onShow:function( ct ){
+			   this.setOptions({
+			    maxDate:jQuery('#datetimepicker_End_Edit').val()?jQuery('#datetimepicker_End_Edit').val():false
+			   })
+			  },
+		timepicker:false
+	});
+	jQuery('#datetimepicker_End_Edit').datetimepicker({
+		onShow:function( ct ){
+			   this.setOptions({
+			    minDate:jQuery('#datetimepicker_Start_Edit').val()?jQuery('#datetimepicker_Start_Edit').val():false
+			   })
+			  },
+		 timepicker:false
+	});
 });
 
 $(function() {
