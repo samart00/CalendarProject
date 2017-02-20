@@ -28,3 +28,17 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .fc-day-grid-event .fc-content {
     cursor: pointer;
 }
+label.error, .error-date {
+    color: red !important;
+    font-size: 12px !important;
+}
+.required{
+    height:20px;
+    color:#FF0000;
+    padding-left:5px;
+    padding-right:5px;
+    font-size:12px;
+    line-height:15px;
+    width:100px;
+    float:none;
+}
