@@ -152,22 +152,30 @@ $(function () {
 $(function () {
 	jQuery.datetimepicker.setLocale('th');
 	jQuery('#datetimepicker1').datetimepicker({
+		minDate:'0',
+		format:'Y/m/d H:i',
+		formatDate:'Y/m/d',
 		onShow:function( ct ){
 			   this.setOptions({
-			    maxDate:jQuery('#datetimepicker2').val()?jQuery('#datetimepicker2').val():false
+			    maxDate:jQuery('#datetimepicker1').val()?jQuery('#datetimepicker1').val():false
 			   })
 			  },
-		timepicker:false
+		timepicker:true,
 	});
 	jQuery('#datetimepicker2').datetimepicker({
+		format:'Y/m/d H:i',
+		formatDate:'Y/m/d',
 		onShow:function( ct ){
 			   this.setOptions({
 			    minDate:jQuery('#datetimepicker1').val()?jQuery('#datetimepicker1').val():false
 			   })
 			  },
-		 timepicker:false
+		 timepicker:true,
 	});
 	jQuery('#datetimepicker_Start_Edit').datetimepicker({
+		minDate:'0',
+		format:'Y/m/d H:i',
+		formatDate:'Y/m/d',
 		onShow:function( ct ){
 			   this.setOptions({
 			    maxDate:jQuery('#datetimepicker_End_Edit').val()?jQuery('#datetimepicker_End_Edit').val():false
@@ -176,6 +184,8 @@ $(function () {
 		timepicker:false
 	});
 	jQuery('#datetimepicker_End_Edit').datetimepicker({
+		format:'Y/m/d H:i',
+		formatDate:'Y/m/d',
 		onShow:function( ct ){
 			   this.setOptions({
 			    minDate:jQuery('#datetimepicker_Start_Edit').val()?jQuery('#datetimepicker_Start_Edit').val():false
