@@ -30,6 +30,8 @@ class AppAsset extends AssetBundle
     	'js/jquery.datetimepicker.full.js',
     	'js/date.format.js',
     	'js/fileinput.min.js',
+    	'js/jquery.validate.min.js',
+    	'js/form-validate.js',
     	//' js/sortable.min.js',
     	'js/canvas-to-blob.min.js',
     	'js/validator.min.js',

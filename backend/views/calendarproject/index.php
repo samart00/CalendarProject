@@ -20,6 +20,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 $str2 = <<<EOT
+$("#event_name").change(function(){
+                var value=($(this).val()).trim();
+                $(this).val(value);
+            });
 $('#submit').click(function(){
 		var formData = new FormData();
 		var eventName = $('input[id=event_name]').val().trim();
@@ -49,7 +53,7 @@ $('#submit').click(function(){
 	    };
 		request.send(formData);
 		location.reload();
-
+	}
 });
 EOT;
 

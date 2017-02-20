@@ -17,11 +17,19 @@ $this->title = 'สร้างวันหยุด';
 $this->params['breadcrumbs'][] = $this->title;
 
 $str2 = <<<EOT
+$("#event_name").change(function(){
+                var value=($(this).val()).trim();
+                $(this).val(value);
+            });
 $('#submit').click(function(){
 		var formData = new FormData();
-		formData.append('event_name', $('input[id=event_name]').val());
-		formData.append('start_date', $('input[id=datetimepicker1]').val());
-		formData.append('end_date', $('input[id=datetimepicker2]').val());
+		var eventName = $('input[id=event_name]').val().trim();
+		var startDate = $('input[id=datetimepicker1]').val().trim();
+		var endDate = $('input[id=datetimepicker2]').val().trim();
+		if(eventName != "" && startDate != "" && endDate != ""){
+			formData.append('event_name', eventName);
+			formData.append('start_date', startDate);
+			formData.append('end_date', endDate);
 		formData.append('description', $('textarea[id=description]').val());
 		var type = $('input[name="CheckType"]:checked').val();
 		formData.append('type', '3');
@@ -42,7 +50,7 @@ $('#submit').click(function(){
 	    };
 		request.send(formData);
 		location.reload();
-
+	}
 });
 EOT;
 
@@ -185,19 +193,6 @@ $(function() {
 	</script>
 <?php JSRegister::end(); ?>
 
-<style type="text/css">
-.required{
-    height:20px;
-    color:#FF0000;
-    padding-left:5px;
-    padding-right:5px;
-    font-size:12px;
-    line-height:15px;
-    width:100px;
-    float:none;
-}
-</style>
-
 <div class="event-index">
    <div class="wrapper">
     <section class="content">
@@ -220,14 +215,14 @@ $(function() {
 					            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">x</span> <span class="sr-only">close</span></button>
 					            <h4 id="modalTitle" class="modal-title"></h4>
 					        </div>
-					       <form action="" role="form" data-toggle="validator" id="validate">
+					       <form action="" role="form" data-toggle="validator" id="validate" method="post">
 					        <div id="modalBody" class="modal-body">
 														        	
 					        	<div class="form-group">
 								  <label for="usr">หัวข้อกิจกรรม
 								  	<span class="required"> * </span>
 								  </label>
-								  <input type="text" class="form-control " id="event_name" placeholder="หัวข้อกิจกรรม" data-error="กรุณากรอกข้อมูล" required>
+								  <input type="text" class="form-control " id="event_name" name="eventName" placeholder="หัวข้อกิจกรรม" data-error="กรุณากรอกข้อมูล">
 								  <div class="help-block with-errors"></div>
 								</div>
 								
@@ -236,7 +231,7 @@ $(function() {
 									<span class="required"> * </span>
 								</label>
 					                <div class='input-group date' >
-					                    <input id='datetimepicker1' type='text' class="form-control" placeholder="วันที่เริ่มต้น" data-error="กรุณากรอกข้อมูล" required/>
+					                    <input id='datetimepicker1' type='text' class="form-control" name="startDate" placeholder="วันที่เริ่มต้น" data-error="กรุณากรอกข้อมูล">
 					                    <span class="input-group-addon">
 					                        <span class="glyphicon glyphicon-calendar"></span>
 					                    </span>
@@ -248,7 +243,7 @@ $(function() {
 					            	<span class="required"> * </span>
 					            </label>
 					                <div class='input-group date' >
-					                    <input id='datetimepicker2' type='text' class="form-control" placeholder="วันที่สิ้นสุด" data-error="กรุณากรอกข้อมูล" required/>
+					                    <input id='datetimepicker2' type='text' name="endDate" class="form-control" placeholder="วันที่สิ้นสุด" data-error="กรุณากรอกข้อมูล">
 					                    <span class="input-group-addon">
 					                        <span class="glyphicon glyphicon-calendar"></span>
 					                    </span>
@@ -260,21 +255,20 @@ $(function() {
 								  <textarea class="form-control" rows="5" placeholder="รายละเอียด" id="description"></textarea>
 								</div>
 					         </div>
-					         </form>
 					        <div class="modal-footer">
 					        
 <!-- 					        <form action="" name="sendFile" method="POST" enctype="multipart/form-data"> -->
 <!-- 					        	<input type="file" onchange="sendFile.submit ();" class="btn btn-success" name="image" /> -->
 <!-- 					        </form>	 -->
 					        
-					        	<button type="button" class="btn btn-success" data-dismiss="modal" id="submit">บันทึก</button>
+					        	<button type="submit" class="btn btn-success" id="submit">บันทึก</button>
 					        	<button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button> 
 				        </div>
 				    </div>
 				</div>
 				
 				</div>
-				
+			     </form>	
 				
 				<div id="HolidayModal" class="modal fade">
               		
