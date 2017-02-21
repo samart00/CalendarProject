@@ -26,6 +26,8 @@ $('#submit').click(function(){
 		var eventName = $('input[id=event_name]').val().trim();
 		var startDate = $('input[id=datetimepicker1]').val().trim();
 		var endDate = $('input[id=datetimepicker2]').val().trim();
+		var title = $('input[id=event_name]').val();
+		if(title.trim().length > 0){
 		if(eventName != "" && startDate != "" && endDate != ""){
 			formData.append('event_name', eventName);
 			formData.append('start_date', startDate);
@@ -50,6 +52,7 @@ $('#submit').click(function(){
 	    };
 		request.send(formData);
 		location.reload();
+		}		
 	}
 });
 EOT;
