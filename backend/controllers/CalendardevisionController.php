@@ -40,7 +40,9 @@ class CalendardevisionController extends Controller
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 		
 //         $query = Event::find()->where('Type == 3');
-        $query = Event::find()->all();
+        $query = Event::find();
+        $query->where(['Type' => ['3','4','5']]);
+        $query = $query->all();
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,

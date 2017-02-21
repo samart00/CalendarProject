@@ -38,7 +38,7 @@ $('#submit').click(function(){
 		formData.append('type', type);
 		
 		//ต้อง Get ค่าจากDatabase ตอนนี้Fixค่า
-		formData.append('color', (type == 1)?'#9999ff':'#99ff99');
+		formData.append('color', (type == 4)?'#9999ff':'#ccff33');
 		
 		var request = new XMLHttpRequest();
 		request.open("POST", "$baseUrl/index.php?r=event/save", true);
@@ -298,8 +298,8 @@ $(function () {
 								</label>
 															
 								<div class="radio">
-								  <label><input type="radio" id="optradio" name="CheckType" value="1" data-error="กรุณาเลือก" checked="checked"><span class="fc-event-dot" style="background-color:#9999ff"></span> ประชุม</label><br>
-								  <label><input type="radio" id="optradio2" name="CheckType" value="2" data-error="กรุณาเลือก"><span class="fc-event-dot" style="background-color:#99ff99"></span> ส่วนตัว</label>
+								  <label><input type="radio" id="optradio" name="CheckType" value="4" data-error="กรุณาเลือก" checked="checked"><span class="fc-event-dot" style="background-color:#9999ff"></span> ประชุม</label><br>
+								  <label><input type="radio" id="optradio2" name="CheckType" value="5" data-error="กรุณาเลือก"><span class="fc-event-dot" style="background-color:#ccff33"></span> อื่นๆ</label>
 					        		<div class="help-block with-errors"></div>
 					        	</div>
 
@@ -364,8 +364,8 @@ $(function () {
 									<span class="required"> * </span>
 								</label>
 								<div class="radio" id="type">
-								  <label><input type="radio" id="optradio_edit" name="CheckType" value="1"><span class="fc-event-dot" style="background-color:#9999ff"></span> ประชุม</label><br>
-								  <label><input type="radio" id="optradio2_edit" name="CheckType" value="2"><span class="fc-event-dot" style="background-color:#99ff99"></span> ส่วนตัว</label>
+								  <label><input type="radio" id="optradio_edit" name="CheckType" value="4"><span class="fc-event-dot" style="background-color:#9999ff"></span> ประชุม</label><br>
+								  <label><input type="radio" id="optradio2_edit" name="CheckType" value="5"><span class="fc-event-dot" style="background-color:#ccff33"></span> อื่นๆ</label>
 					        	</div>
 					        	
 					     					        	

@@ -39,7 +39,9 @@ class CalendarprojectController extends Controller
         $searchModel = new Event();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 		
-        $query = Event::find()->all();
+        $query = Event::find();
+        $query->where(['Type' => ['3','6','7']]);
+        $query = $query->all();
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
