@@ -17,10 +17,6 @@ $this->title = 'สร้างวันหยุด';
 $this->params['breadcrumbs'][] = $this->title;
 
 $str2 = <<<EOT
-$("#event_name").change(function(){
-                var value=($(this).val()).trim();
-                $(this).val(value);
-            });
 $('#submit').click(function(){
 		var formData = new FormData();
 		var eventName = $('input[id=event_name]').val().trim();
@@ -265,7 +261,7 @@ $(function() {
 					            </div>
 								<div class="form-group">
 								  <label for="comment">รายละเอียด</label>
-								  <textarea class="form-control" rows="5" placeholder="รายละเอียด" id="description"></textarea>
+								  <textarea class="form-control" id="comment" name="comment" rows="5" placeholder="รายละเอียด" id="description"></textarea>
 								</div>
 					         </div>
 					        <div class="modal-footer">
