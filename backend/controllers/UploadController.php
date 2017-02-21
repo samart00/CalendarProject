@@ -36,7 +36,9 @@ class UploadController extends Controller
 	public function actionIndex()
 	{
 		$model = new UploadForm();
-		$query = Event::find()->all();
+		$query = Event::find();
+        $query->where(['Type' => '3']);
+        $query = $query->all();
 		if (Yii::$app->request->isPost) {
 			$model->HolidayFile = UploadedFile::getInstance($model, 'HolidayFile');
 			if ($model->upload()) {

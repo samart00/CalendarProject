@@ -17,19 +17,11 @@ $this->title = 'สร้างวันหยุด';
 $this->params['breadcrumbs'][] = $this->title;
 
 $str2 = <<<EOT
-$("#event_name").change(function(){
-                var value=($(this).val()).trim();
-                $(this).val(value);
-            });
 $('#submit').click(function(){
 		var formData = new FormData();
-		var eventName = $('input[id=event_name]').val().trim();
-		var startDate = $('input[id=datetimepicker1]').val().trim();
-		var endDate = $('input[id=datetimepicker2]').val().trim();
-		if(eventName != "" && startDate != "" && endDate != ""){
-			formData.append('event_name', eventName);
-			formData.append('start_date', startDate);
-			formData.append('end_date', endDate);
+		formData.append('event_name', $('input[id=event_name]').val());
+		formData.append('start_date', $('input[id=datetimepicker1]').val());
+		formData.append('end_date', $('input[id=datetimepicker2]').val());
 		formData.append('description', $('textarea[id=description]').val());
 		var type = $('input[name="CheckType"]:checked').val();
 		formData.append('type', '3');
@@ -50,7 +42,7 @@ $('#submit').click(function(){
 	    };
 		request.send(formData);
 		location.reload();
-	}
+
 });
 EOT;
 
@@ -151,49 +143,10 @@ $(function () {
    
   });
 $(function () {
-	jQuery.datetimepicker.setLocale('th');
-	jQuery('#datetimepicker1').datetimepicker({
-		minDate:'0',
-		format:'Y/m/d H:i',
-		formatDate:'Y/m/d',
-		onShow:function( ct ){
-			   this.setOptions({
-			    maxDate:jQuery('#datetimepicker1').val()?jQuery('#datetimepicker1').val():false
-			   })
-			  },
-		timepicker:true,
-	});
-	jQuery('#datetimepicker2').datetimepicker({
-		format:'Y/m/d H:i',
-		formatDate:'Y/m/d',
-		onShow:function( ct ){
-			   this.setOptions({
-			    minDate:jQuery('#datetimepicker1').val()?jQuery('#datetimepicker1').val():false
-			   })
-			  },
-		 timepicker:true,
-	});
-	jQuery('#datetimepicker_Start_Edit').datetimepicker({
-		minDate:'0',
-		format:'Y/m/d H:i',
-		formatDate:'Y/m/d',
-		onShow:function( ct ){
-			   this.setOptions({
-			    maxDate:jQuery('#datetimepicker_End_Edit').val()?jQuery('#datetimepicker_End_Edit').val():false
-			   })
-			  },
-		timepicker:false
-	});
-	jQuery('#datetimepicker_End_Edit').datetimepicker({
-		format:'Y/m/d H:i',
-		formatDate:'Y/m/d',
-		onShow:function( ct ){
-			   this.setOptions({
-			    minDate:jQuery('#datetimepicker_Start_Edit').val()?jQuery('#datetimepicker_Start_Edit').val():false
-			   })
-			  },
-		 timepicker:false
-	});
+	jQuery('#datetimepicker1').datetimepicker();
+	jQuery('#datetimepicker2').datetimepicker();
+	jQuery('#datetimepicker_Start_Edit').datetimepicker();
+	jQuery('#datetimepicker_End_Edit').datetimepicker();
 });
 
 $(function() {
@@ -225,23 +178,19 @@ $(function() {
 					            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">x</span> <span class="sr-only">close</span></button>
 					            <h4 id="modalTitle" class="modal-title"></h4>
 					        </div>
-					       <form action="" role="form" data-toggle="validator" id="validate" method="post">
+					       <form action="" role="form" data-toggle="validator" id="validate">
 					        <div id="modalBody" class="modal-body">
 														        	
 					        	<div class="form-group">
-								  <label for="usr">หัวข้อกิจกรรม
-								  	<span class="required"> * </span>
-								  </label>
-								  <input type="text" class="form-control " id="event_name" name="eventName" placeholder="หัวข้อกิจกรรม" data-error="กรุณากรอกข้อมูล">
+								  <label for="usr">หัวข้อกิจกรรม</label>
+								  <input type="text" class="form-control " id="event_name" data-error="กรุณากรอกข้อมูล" required>
 								  <div class="help-block with-errors"></div>
 								</div>
 								
 								<div class="form-group">
-								<label for="usr">เริ่มต้น
-									<span class="required"> * </span>
-								</label>
+								<label for="usr">เริ่มต้น</label>
 					                <div class='input-group date' >
-					                    <input id='datetimepicker1' type='text' class="form-control" name="startDate" placeholder="วันที่เริ่มต้น" data-error="กรุณากรอกข้อมูล">
+					                    <input id='datetimepicker1' type='text' class="form-control" data-error="กรุณากรอกข้อมูล" required/>
 					                    <span class="input-group-addon">
 					                        <span class="glyphicon glyphicon-calendar"></span>
 					                    </span>
@@ -249,11 +198,9 @@ $(function() {
 					                <div class="help-block with-errors"></div>
 					            </div>
 					            <div class="form-group">
-					            <label for="usr">สิ้นสุด
-					            	<span class="required"> * </span>
-					            </label>
+					            <label for="usr">สิ้นสุด</label>
 					                <div class='input-group date' >
-					                    <input id='datetimepicker2' type='text' name="endDate" class="form-control" placeholder="วันที่สิ้นสุด" data-error="กรุณากรอกข้อมูล">
+					                    <input id='datetimepicker2' type='text' class="form-control" data-error="กรุณากรอกข้อมูล" required/>
 					                    <span class="input-group-addon">
 					                        <span class="glyphicon glyphicon-calendar"></span>
 					                    </span>
@@ -262,23 +209,24 @@ $(function() {
 					            </div>
 								<div class="form-group">
 								  <label for="comment">รายละเอียด</label>
-								  <textarea class="form-control" rows="5" placeholder="รายละเอียด" id="description"></textarea>
+								  <textarea class="form-control" rows="5" id="description"></textarea>
 								</div>
 					         </div>
+					         </form>
 					        <div class="modal-footer">
 					        
 <!-- 					        <form action="" name="sendFile" method="POST" enctype="multipart/form-data"> -->
 <!-- 					        	<input type="file" onchange="sendFile.submit ();" class="btn btn-success" name="image" /> -->
 <!-- 					        </form>	 -->
 					        
-					        	<button type="submit" class="btn btn-success" id="submit">บันทึก</button>
+					        	<button type="button" class="btn btn-success" data-dismiss="modal" id="submit">บันทึก</button>
 					        	<button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button> 
 				        </div>
 				    </div>
 				</div>
 				
 				</div>
-			     </form>	
+				
 				
 				<div id="HolidayModal" class="modal fade">
               		
