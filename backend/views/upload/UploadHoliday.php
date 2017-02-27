@@ -220,7 +220,7 @@ $(function() {
 					        <div id="modalBody" class="modal-body">
 														        	
 					        	<div class="form-group">
-								  <label for="usr">ชื่อวันหยุด
+								  <label for="usr">หัวข้อกิจกรรม
 								  	<span class="required"> * </span>
 								  </label>
 								  

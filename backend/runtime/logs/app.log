@@ -17613,3 +17613,557 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1485424509.95
     'REQUEST_TIME' => 1485424509
 ]
+2017-02-20 10:29:36 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: date_input' in E:\PCMS\CalendarProjectFinal\backend\controllers\ProjectController.php:52
+Stack trace:
+#0 E:\PCMS\CalendarProjectFinal\backend\controllers\ProjectController.php(52): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'E:\\PCMS\\Calenda...', 52, Array)
+#1 [internal function]: backend\controllers\ProjectController->actionIndex()
+#2 E:\PCMS\CalendarProjectFinal\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 E:\PCMS\CalendarProjectFinal\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#4 E:\PCMS\CalendarProjectFinal\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('', Array)
+#5 E:\PCMS\CalendarProjectFinal\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('project', Array)
+#6 E:\PCMS\CalendarProjectFinal\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 E:\PCMS\CalendarProjectFinal\backend\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2017-02-20 10:29:36 [::1][-][-][info][application] $_GET = [
+    'r' => 'project'
+]
+
+$_COOKIE = [
+    '_csrf-backend' => '6c9b20ba66a1c2f8d4f0d6945a7a945b18d137e3703c869761a98d1c8fba7037a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"I5jR_ojeIaI4-Efiu7yeA2LF5SyJu17X\";}'
+    'advanced-backend' => '98n476evns9b3ki9ditti3t3s1'
+    '_identity-backend' => '54c88a81527f8df1a25dfc1143b18733e9e751524c38711a8cefc335f4111222a:2:{i:0;s:17:\"_identity-backend\";i:1;s:80:\"[{\"$oid\":\"5881b3f937d61b1ca000048d\"},\"zldtOqKxs9Feg9veZ3okMjIBmw3DSwIp\",2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/PCMS/CalendarProjectFinal/backend/web/index.php?r=calendarproject'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-backend=6c9b20ba66a1c2f8d4f0d6945a7a945b18d137e3703c869761a98d1c8fba7037a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22I5jR_ojeIaI4-Efiu7yeA2LF5SyJu17X%22%3B%7D; advanced-backend=98n476evns9b3ki9ditti3t3s1; _identity-backend=54c88a81527f8df1a25dfc1143b18733e9e751524c38711a8cefc335f4111222a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%225881b3f937d61b1ca000048d%22%7D%2C%22zldtOqKxs9Feg9veZ3okMjIBmw3DSwIp%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\mongodb\\bin;C:\\Users\\manlo\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'REMOTE_PORT' => '4907'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=project'
+    'REQUEST_URI' => '/PCMS/CalendarProjectFinal/backend/web/index.php?r=project'
+    'SCRIPT_NAME' => '/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'PHP_SELF' => '/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487582976.923
+    'REQUEST_TIME' => 1487582976
+]
+2017-02-20 10:30:18 [::1][5881b3f937d61b1ca000048d][98n476evns9b3ki9ditti3t3s1][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "project?date_input=22".' in E:\PCMS\CalendarProjectFinal\vendor\yiisoft\yii2\base\Module.php:462
+Stack trace:
+#0 E:\PCMS\CalendarProjectFinal\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('project?date_in...', Array)
+#1 E:\PCMS\CalendarProjectFinal\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\PCMS\CalendarProjectFinal\backend\web\index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'ไม่พบหน้า' in E:\PCMS\CalendarProjectFinal\vendor\yiisoft\yii2\web\Application.php:112
+Stack trace:
+#0 E:\PCMS\CalendarProjectFinal\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\PCMS\CalendarProjectFinal\backend\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2017-02-20 10:30:18 [::1][5881b3f937d61b1ca000048d][98n476evns9b3ki9ditti3t3s1][info][application] $_GET = [
+    'r' => 'project?date_input=22'
+]
+
+$_COOKIE = [
+    '_csrf-backend' => '6c9b20ba66a1c2f8d4f0d6945a7a945b18d137e3703c869761a98d1c8fba7037a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"I5jR_ojeIaI4-Efiu7yeA2LF5SyJu17X\";}'
+    'advanced-backend' => '98n476evns9b3ki9ditti3t3s1'
+    '_identity-backend' => '54c88a81527f8df1a25dfc1143b18733e9e751524c38711a8cefc335f4111222a:2:{i:0;s:17:\"_identity-backend\";i:1;s:80:\"[{\"$oid\":\"5881b3f937d61b1ca000048d\"},\"zldtOqKxs9Feg9veZ3okMjIBmw3DSwIp\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/PCMS/CalendarProjectFinal/backend/web/'
+    '__id' => MongoDB\BSON\ObjectID#1
+    (
+        [oid] => '5881b3f937d61b1ca000048d'
+    )
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf-backend=6c9b20ba66a1c2f8d4f0d6945a7a945b18d137e3703c869761a98d1c8fba7037a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22I5jR_ojeIaI4-Efiu7yeA2LF5SyJu17X%22%3B%7D; advanced-backend=98n476evns9b3ki9ditti3t3s1; _identity-backend=54c88a81527f8df1a25dfc1143b18733e9e751524c38711a8cefc335f4111222a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%225881b3f937d61b1ca000048d%22%7D%2C%22zldtOqKxs9Feg9veZ3okMjIBmw3DSwIp%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\mongodb\\bin;C:\\Users\\manlo\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'REMOTE_PORT' => '4924'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=project?date_input=22'
+    'REQUEST_URI' => '/PCMS/CalendarProjectFinal/backend/web/index.php?r=project?date_input=22'
+    'SCRIPT_NAME' => '/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'PHP_SELF' => '/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487583018.362
+    'REQUEST_TIME' => 1487583018
+]
+2017-02-21 17:57:29 [::1][-][-][error][yii\base\ErrorException:64] exception 'yii\base\ErrorException' with message 'Cannot use yii\helpers\Html as Html because the name is already in use' in E:\PCMS\CalendarProjectFinal\backend\views\upload\UploadHoliday.php:376
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-21 17:57:27 [::1][-][-][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_COOKIE = [
+    'advanced-backend' => '8f3vseut1iji31tsgo8c2f5v70'
+    '_identity-backend' => '810d5af2201f910a0e5b7f98275446976218ef6cb9e75c4237ac4b44cd9a011ea:2:{i:0;s:17:\"_identity-backend\";i:1;s:80:\"[{\"$oid\":\"5881b3f937d61b1ca000048d\"},\"zldtOqKxs9Feg9veZ3okMjIBmw3DSwIp\",2592000]\";}'
+    '_csrf-backend' => 'cb3df525f7b01231a99bde45ad0ac8b46cc1528c5e9c10d92423ebf7d588330fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"nArCNVZDS45C-_11fXLjO0D8ytf-oNLw\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th,en;q=0.8'
+    'HTTP_COOKIE' => 'advanced-backend=8f3vseut1iji31tsgo8c2f5v70; _identity-backend=810d5af2201f910a0e5b7f98275446976218ef6cb9e75c4237ac4b44cd9a011ea%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%225881b3f937d61b1ca000048d%22%7D%2C%22zldtOqKxs9Feg9veZ3okMjIBmw3DSwIp%22%2C2592000%5D%22%3B%7D; _csrf-backend=cb3df525f7b01231a99bde45ad0ac8b46cc1528c5e9c10d92423ebf7d588330fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22nArCNVZDS45C-_11fXLjO0D8ytf-oNLw%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\mongodb\\bin;C:\\Users\\manlo\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'REMOTE_PORT' => '4056'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/PCMS/CalendarProjectFinal/backend/web/index.php?r=upload'
+    'SCRIPT_NAME' => '/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'PHP_SELF' => '/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487696247.259
+    'REQUEST_TIME' => 1487696247
+]
+2017-02-21 17:57:40 [::1][-][-][error][yii\base\ErrorException:64] exception 'yii\base\ErrorException' with message 'Cannot use yii\helpers\Html as Html because the name is already in use' in E:\PCMS\CalendarProjectFinal\backend\views\upload\UploadHoliday.php:376
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-21 17:57:40 [::1][-][-][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_COOKIE = [
+    'advanced-backend' => '8f3vseut1iji31tsgo8c2f5v70'
+    '_identity-backend' => '810d5af2201f910a0e5b7f98275446976218ef6cb9e75c4237ac4b44cd9a011ea:2:{i:0;s:17:\"_identity-backend\";i:1;s:80:\"[{\"$oid\":\"5881b3f937d61b1ca000048d\"},\"zldtOqKxs9Feg9veZ3okMjIBmw3DSwIp\",2592000]\";}'
+    '_csrf-backend' => 'cb3df525f7b01231a99bde45ad0ac8b46cc1528c5e9c10d92423ebf7d588330fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"nArCNVZDS45C-_11fXLjO0D8ytf-oNLw\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/PCMS/CalendarProjectFinal/backend/web/index.php?r=calendarproject'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th,en;q=0.8'
+    'HTTP_COOKIE' => 'advanced-backend=8f3vseut1iji31tsgo8c2f5v70; _identity-backend=810d5af2201f910a0e5b7f98275446976218ef6cb9e75c4237ac4b44cd9a011ea%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%225881b3f937d61b1ca000048d%22%7D%2C%22zldtOqKxs9Feg9veZ3okMjIBmw3DSwIp%22%2C2592000%5D%22%3B%7D; _csrf-backend=cb3df525f7b01231a99bde45ad0ac8b46cc1528c5e9c10d92423ebf7d588330fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22nArCNVZDS45C-_11fXLjO0D8ytf-oNLw%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\mongodb\\bin;C:\\Users\\manlo\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'REMOTE_PORT' => '4078'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/PCMS/CalendarProjectFinal/backend/web/index.php?r=upload'
+    'SCRIPT_NAME' => '/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'PHP_SELF' => '/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487696260.815
+    'REQUEST_TIME' => 1487696260
+]
+2017-02-21 17:58:23 [::1][-][-][error][yii\base\ErrorException:64] exception 'yii\base\ErrorException' with message 'Cannot use yii\grid\GridView as GridView because the name is already in use' in E:\PCMS\CalendarProjectFinal\backend\views\upload\UploadHoliday.php:377
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-21 17:58:23 [::1][-][-][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_COOKIE = [
+    'advanced-backend' => '8f3vseut1iji31tsgo8c2f5v70'
+    '_identity-backend' => '810d5af2201f910a0e5b7f98275446976218ef6cb9e75c4237ac4b44cd9a011ea:2:{i:0;s:17:\"_identity-backend\";i:1;s:80:\"[{\"$oid\":\"5881b3f937d61b1ca000048d\"},\"zldtOqKxs9Feg9veZ3okMjIBmw3DSwIp\",2592000]\";}'
+    '_csrf-backend' => 'cb3df525f7b01231a99bde45ad0ac8b46cc1528c5e9c10d92423ebf7d588330fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"nArCNVZDS45C-_11fXLjO0D8ytf-oNLw\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/PCMS/CalendarProjectFinal/backend/web/index.php?r=calendarproject'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th,en;q=0.8'
+    'HTTP_COOKIE' => 'advanced-backend=8f3vseut1iji31tsgo8c2f5v70; _identity-backend=810d5af2201f910a0e5b7f98275446976218ef6cb9e75c4237ac4b44cd9a011ea%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%225881b3f937d61b1ca000048d%22%7D%2C%22zldtOqKxs9Feg9veZ3okMjIBmw3DSwIp%22%2C2592000%5D%22%3B%7D; _csrf-backend=cb3df525f7b01231a99bde45ad0ac8b46cc1528c5e9c10d92423ebf7d588330fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22nArCNVZDS45C-_11fXLjO0D8ytf-oNLw%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\mongodb\\bin;C:\\Users\\manlo\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'REMOTE_PORT' => '4108'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/PCMS/CalendarProjectFinal/backend/web/index.php?r=upload'
+    'SCRIPT_NAME' => '/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'PHP_SELF' => '/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487696303.085
+    'REQUEST_TIME' => 1487696303
+]
+2017-02-21 17:58:34 [::1][-][-][error][yii\base\ErrorException:64] exception 'yii\base\ErrorException' with message 'Cannot use richardfan\widget\JSRegister as JSRegister because the name is already in use' in E:\PCMS\CalendarProjectFinal\backend\views\upload\UploadHoliday.php:378
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-21 17:58:34 [::1][-][-][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_COOKIE = [
+    'advanced-backend' => '8f3vseut1iji31tsgo8c2f5v70'
+    '_identity-backend' => '810d5af2201f910a0e5b7f98275446976218ef6cb9e75c4237ac4b44cd9a011ea:2:{i:0;s:17:\"_identity-backend\";i:1;s:80:\"[{\"$oid\":\"5881b3f937d61b1ca000048d\"},\"zldtOqKxs9Feg9veZ3okMjIBmw3DSwIp\",2592000]\";}'
+    '_csrf-backend' => 'cb3df525f7b01231a99bde45ad0ac8b46cc1528c5e9c10d92423ebf7d588330fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"nArCNVZDS45C-_11fXLjO0D8ytf-oNLw\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th,en;q=0.8'
+    'HTTP_COOKIE' => 'advanced-backend=8f3vseut1iji31tsgo8c2f5v70; _identity-backend=810d5af2201f910a0e5b7f98275446976218ef6cb9e75c4237ac4b44cd9a011ea%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%225881b3f937d61b1ca000048d%22%7D%2C%22zldtOqKxs9Feg9veZ3okMjIBmw3DSwIp%22%2C2592000%5D%22%3B%7D; _csrf-backend=cb3df525f7b01231a99bde45ad0ac8b46cc1528c5e9c10d92423ebf7d588330fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22nArCNVZDS45C-_11fXLjO0D8ytf-oNLw%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\mongodb\\bin;C:\\Users\\manlo\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'REMOTE_PORT' => '4135'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/PCMS/CalendarProjectFinal/backend/web/index.php?r=upload'
+    'SCRIPT_NAME' => '/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'PHP_SELF' => '/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487696314.699
+    'REQUEST_TIME' => 1487696314
+]
+2017-02-21 17:58:44 [::1][-][-][error][yii\base\ErrorException:64] exception 'yii\base\ErrorException' with message 'Cannot use backend\models\Event as Event because the name is already in use' in E:\PCMS\CalendarProjectFinal\backend\views\upload\UploadHoliday.php:378
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-21 17:58:44 [::1][-][-][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_COOKIE = [
+    'advanced-backend' => '8f3vseut1iji31tsgo8c2f5v70'
+    '_identity-backend' => '810d5af2201f910a0e5b7f98275446976218ef6cb9e75c4237ac4b44cd9a011ea:2:{i:0;s:17:\"_identity-backend\";i:1;s:80:\"[{\"$oid\":\"5881b3f937d61b1ca000048d\"},\"zldtOqKxs9Feg9veZ3okMjIBmw3DSwIp\",2592000]\";}'
+    '_csrf-backend' => 'cb3df525f7b01231a99bde45ad0ac8b46cc1528c5e9c10d92423ebf7d588330fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"nArCNVZDS45C-_11fXLjO0D8ytf-oNLw\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th,en;q=0.8'
+    'HTTP_COOKIE' => 'advanced-backend=8f3vseut1iji31tsgo8c2f5v70; _identity-backend=810d5af2201f910a0e5b7f98275446976218ef6cb9e75c4237ac4b44cd9a011ea%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%225881b3f937d61b1ca000048d%22%7D%2C%22zldtOqKxs9Feg9veZ3okMjIBmw3DSwIp%22%2C2592000%5D%22%3B%7D; _csrf-backend=cb3df525f7b01231a99bde45ad0ac8b46cc1528c5e9c10d92423ebf7d588330fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22nArCNVZDS45C-_11fXLjO0D8ytf-oNLw%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\mongodb\\bin;C:\\Users\\manlo\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'REMOTE_PORT' => '4153'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/PCMS/CalendarProjectFinal/backend/web/index.php?r=upload'
+    'SCRIPT_NAME' => '/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'PHP_SELF' => '/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487696324.647
+    'REQUEST_TIME' => 1487696324
+]
+2017-02-21 17:58:53 [::1][-][-][error][yii\base\ErrorException:64] exception 'yii\base\ErrorException' with message 'Cannot use yii\web\View as View because the name is already in use' in E:\PCMS\CalendarProjectFinal\backend\views\upload\UploadHoliday.php:380
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-21 17:58:53 [::1][-][-][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_COOKIE = [
+    'advanced-backend' => '8f3vseut1iji31tsgo8c2f5v70'
+    '_identity-backend' => '810d5af2201f910a0e5b7f98275446976218ef6cb9e75c4237ac4b44cd9a011ea:2:{i:0;s:17:\"_identity-backend\";i:1;s:80:\"[{\"$oid\":\"5881b3f937d61b1ca000048d\"},\"zldtOqKxs9Feg9veZ3okMjIBmw3DSwIp\",2592000]\";}'
+    '_csrf-backend' => 'cb3df525f7b01231a99bde45ad0ac8b46cc1528c5e9c10d92423ebf7d588330fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"nArCNVZDS45C-_11fXLjO0D8ytf-oNLw\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th,en;q=0.8'
+    'HTTP_COOKIE' => 'advanced-backend=8f3vseut1iji31tsgo8c2f5v70; _identity-backend=810d5af2201f910a0e5b7f98275446976218ef6cb9e75c4237ac4b44cd9a011ea%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%225881b3f937d61b1ca000048d%22%7D%2C%22zldtOqKxs9Feg9veZ3okMjIBmw3DSwIp%22%2C2592000%5D%22%3B%7D; _csrf-backend=cb3df525f7b01231a99bde45ad0ac8b46cc1528c5e9c10d92423ebf7d588330fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22nArCNVZDS45C-_11fXLjO0D8ytf-oNLw%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\mongodb\\bin;C:\\Users\\manlo\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'REMOTE_PORT' => '4170'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/PCMS/CalendarProjectFinal/backend/web/index.php?r=upload'
+    'SCRIPT_NAME' => '/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'PHP_SELF' => '/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487696333.352
+    'REQUEST_TIME' => 1487696333
+]
+2017-02-21 17:59:03 [::1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'View' not found' in E:\PCMS\CalendarProjectFinal\backend\views\upload\UploadHoliday.php:46
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2017-02-21 17:59:03 [::1][-][-][info][application] $_GET = [
+    'r' => 'upload'
+]
+
+$_COOKIE = [
+    'advanced-backend' => '8f3vseut1iji31tsgo8c2f5v70'
+    '_identity-backend' => '810d5af2201f910a0e5b7f98275446976218ef6cb9e75c4237ac4b44cd9a011ea:2:{i:0;s:17:\"_identity-backend\";i:1;s:80:\"[{\"$oid\":\"5881b3f937d61b1ca000048d\"},\"zldtOqKxs9Feg9veZ3okMjIBmw3DSwIp\",2592000]\";}'
+    '_csrf-backend' => 'cb3df525f7b01231a99bde45ad0ac8b46cc1528c5e9c10d92423ebf7d588330fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"nArCNVZDS45C-_11fXLjO0D8ytf-oNLw\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'th,en;q=0.8'
+    'HTTP_COOKIE' => 'advanced-backend=8f3vseut1iji31tsgo8c2f5v70; _identity-backend=810d5af2201f910a0e5b7f98275446976218ef6cb9e75c4237ac4b44cd9a011ea%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A80%3A%22%5B%7B%22%24oid%22%3A%225881b3f937d61b1ca000048d%22%7D%2C%22zldtOqKxs9Feg9veZ3okMjIBmw3DSwIp%22%2C2592000%5D%22%3B%7D; _csrf-backend=cb3df525f7b01231a99bde45ad0ac8b46cc1528c5e9c10d92423ebf7d588330fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22nArCNVZDS45C-_11fXLjO0D8ytf-oNLw%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Windows Live\\Shared;C:\\Windows\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\mongodb\\bin;C:\\Users\\manlo\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.28'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'REMOTE_PORT' => '4206'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=upload'
+    'REQUEST_URI' => '/PCMS/CalendarProjectFinal/backend/web/index.php?r=upload'
+    'SCRIPT_NAME' => '/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'PHP_SELF' => '/PCMS/CalendarProjectFinal/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1487696343.078
+    'REQUEST_TIME' => 1487696343
+]

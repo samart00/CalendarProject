@@ -7,7 +7,8 @@ return [
             'username' => 'root',
             'password' => '',
             'charset' => 'utf8',
-        ],'mongodb' => [ 'class' => '\yii\mongodb\Connection', 'dsn' => 'mongodb://localhost:27017/db_pm', ],
+        ],
+'mongodb' => [ 'class' => '\yii\mongodb\Connection', 'dsn' => 'mongodb://localhost:27017/db_pm', ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             'viewPath' => '@common/mail',

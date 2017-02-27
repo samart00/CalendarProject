@@ -20,15 +20,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 $str2 = <<<EOT
-$("#event_name").change(function(){
-                var value=($(this).val()).trim();
-                $(this).val(value);
-            });
 $('#submit').click(function(){
 		var formData = new FormData();
 		var eventName = $('input[id=event_name]').val().trim();
 		var startDate = $('input[id=datetimepicker1]').val().trim();
 		var endDate = $('input[id=datetimepicker2]').val().trim();
+		var title = $('input[id=event_name]').val();
+		if(title.trim().length > 0){
 		if(eventName != "" && startDate != "" && endDate != ""){
 			formData.append('event_name', eventName);
 			formData.append('start_date', startDate);
@@ -54,6 +52,7 @@ $('#submit').click(function(){
 			request.send(formData);
 			location.reload();
 		}
+		}			
 });
 EOT;
 
@@ -120,7 +119,7 @@ $(function () {
       editable: false,
       disableDragging: true,
       eventLimit: true,
-
+      allDaySlot: true,
       //Test
       eventClick: function(event, element) {
     	  console.log((event));
@@ -264,7 +263,7 @@ $(function() {
 					            </div>
 								<div class="form-group">
 								  <label for="comment">รายละเอียด</label>
-								  <textarea class="form-control" rows="5" placeholder="รายละเอียด" id="description"></textarea>
+								  <textarea class="form-control" rows="5" id="comment" name="comment" value="" placeholder="รายละเอียด" id="description"></textarea>
 								</div>
 								
 								<label for="usr">ประเภทกิจกรรม
@@ -305,14 +304,14 @@ $(function() {
 								  <label for="usr">หัวข้อกิจกรรม
 								  	<span class="required"> * </span>
 								  </label>
-								  <input type="text" class="form-control" id="event_name_Edit">
+								  <input type="text" class="form-control" id="event_name_Edit" name="eventName" placeholder="หัวข้อกิจกรรม">
 								</div>
 								<div class="form-group">
 								<label for="usr">เริ่มต้น
 									<span class="required"> * </span>
 								</label>
 					                <div class='input-group date' >
-					                    <input id='datetimepicker_Start_Edit' type='text' class="form-control" />
+					                    <input id='datetimepicker_Start_Edit' type='text' class="form-control" name="startDate" placeholder="วันที่เริ่มต้น">
 					                    <span class="input-group-addon">
 					                        <span class="glyphicon glyphicon-calendar"></span>
 					                    </span>
@@ -323,7 +322,7 @@ $(function() {
 					            	<span class="required"> * </span>
 					            </label>
 					                <div class='input-group date' >
-					                    <input id='datetimepicker_End_Edit' type='text' class="form-control" />
+					                    <input id='datetimepicker_End_Edit' type='text' class="form-control" name="endDate" placeholder="วันที่สิ้นสุด">
 					                    <span class="input-group-addon">
 					                        <span class="glyphicon glyphicon-calendar"></span>
 					                    </span>
@@ -342,7 +341,7 @@ $(function() {
 					     					        	
 					         </div>
 					        <div class="modal-footer">
-					            <button type="button" class="btn btn-success" data-dismiss="modal" id="submit">บันทึก</button>
+					            <button type="submit" class="btn btn-success" id="submit">บันทึก</button>
 					        	<button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button>
  
 				            </div>

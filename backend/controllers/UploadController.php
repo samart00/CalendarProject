@@ -39,31 +39,31 @@ class UploadController extends Controller
 		$query = Event::find();
         $query->where(['Type' => '3']);
         $query = $query->all();
-		if (Yii::$app->request->isPost) {
-			$model->HolidayFile = UploadedFile::getInstance($model, 'HolidayFile');
-			if ($model->upload()) {
-				// file is uploaded successfully
-				Alert::begin([
-				    'options' => [
-				        'class' => 'alert-success',
-				    ],
-				]);
+// 		if (Yii::$app->request->isPost) {
+// 			$model->HolidayFile = UploadedFile::getInstance($model, 'HolidayFile');
+// 			if ($model->upload()) {
+// 				// file is uploaded successfully
+// 				Alert::begin([
+// 				    'options' => [
+// 				        'class' => 'alert-success',
+// 				    ],
+// 				]);
 			
-				echo 'Success.';
+// 				echo 'Success.';
 				
-				Alert::end();
-			}else{
-				Alert::begin([
-						'options' => [
-								'class' => 'alert-danger',
-						],
-				]);
+// 				Alert::end();
+// 			}else{
+// 				Alert::begin([
+// 						'options' => [
+// 								'class' => 'alert-danger',
+// 						],
+// 				]);
 					
-				echo 'Fail';
+// 				echo 'Fail';
 				
-				Alert::end();
-			}
-		}
+// 				Alert::end();
+// 			}
+// 		}
 
 		return $this->render('UploadHoliday', ['model' => $model,'value'=> $query]);
 	}

@@ -38,8 +38,7 @@ class CalendardevisionController extends Controller
     {
         $searchModel = new Event();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-		
-//         $query = Event::find()->where('Type == 3');
+
         $query = Event::find();
         $query->where(['Type' => ['3','4','5']]);
         $query = $query->all();
@@ -51,7 +50,6 @@ class CalendardevisionController extends Controller
     }
 
     public function actionSave(){
-    
     	$request = \Yii::$app->request;
     	$response = Yii::$app->response;
     	$response->format = \yii\web\Response::FORMAT_JSON;

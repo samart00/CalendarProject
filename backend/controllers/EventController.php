@@ -48,7 +48,6 @@ class EventController extends Controller
     }
 
     public function actionSave(){
-    
     	$request = \Yii::$app->request;
     	$response = Yii::$app->response;
     	$response->format = \yii\web\Response::FORMAT_JSON;

@@ -20,6 +20,16 @@ $(function() {
   );
   // Initialize form validation on the registration form.
   // It has the name attribute "registration"
+  $("#event_name").change(function(){
+      var value=($(this).val()).trim();
+      $(this).val(value);
+  });
+  $("#comment").change(function(){
+      var value=($(this).val()).trim();
+      $(this).val(value);
+  });
+  
+  
   $("form[id='validate']").validate({
     // Specify validation rules
     rules: {
@@ -39,12 +49,12 @@ $(function() {
 //        formatDate : true,
 //        formatTime: true,
       },
-      email: {
-        required: true,
+//      email: {
+//        required: true,
         // Specify that email should be validated
         // by the built-in "email" rule
-        email: true
-      },
+//        email: true
+//      },
     },
     // Specify validation error messages
     messages: {
